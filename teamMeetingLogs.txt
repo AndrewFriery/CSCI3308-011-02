@@ -1,0 +1,7 @@
+Team Meeting Log Format:
+Meeting Date and time:
+1. Decisions Made
+2. Alternative Actions/Options Discussed
+3. Follow-up items, including agreed-on roles and responsibilities
+
+Meeting 1:
