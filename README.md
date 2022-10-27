@@ -11,12 +11,12 @@ StrawHats
 
 ### Team Members: <br />
 
-1. J. Ian Stewart, jast1927,  <br />
-2. Nicholas Miller, nimi2356,  <br />
-3. Zach Remer, zare3684,  <br />
-4. Stephen Cowan, stephencowan0,  <br />
-5. Ian Von Pechmann, ivonpechmann,  <br />
-6. Andrew Friery, AndrewFriery,  <br />
+1. J. Ian Stewart, jast1927, jast1927@colorado.edu <br />
+2. Nicholas Miller, nimi2356, nimi2356@colorado.edu <br />
+3. Zach Remer, zare3684, zare3684@colorado.edu <br />
+4. Stephen Cowan, stephencowan0, stco3959@colorado.edu <br />
+5. Ian Von Pechmann, ivonpechmann, iavo9531@colorado.edu <br />
+6. Andrew Friery, AndrewFriery, anfr2530@colorado.edu <br />
   
 ### Team Communication
 
