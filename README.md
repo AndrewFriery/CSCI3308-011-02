@@ -1,8 +1,10 @@
 # Ai Art
 
-### Vision Statement
+### Vision Statement <br />
+For people who want to generate and create a portfolio of ai generated art.
 
-### Description
+### Application Description <br />
+
 
 ### Team Name: <br />
 StrawHats
