@@ -18,4 +18,6 @@ StrawHats
 5. Ian Von Pechmann, ivonpechmann,  <br />
 6. Andrew Friery, AndrewFriery,  <br />
   
-#
+### Team Communication
+
+- We are communication through text message. We have created a group text message with everyone in there and may also be doing discord but still undecided.
