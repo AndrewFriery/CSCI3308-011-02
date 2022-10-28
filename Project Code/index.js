@@ -121,3 +121,10 @@ app.use(auth);
 app.get('/game', (req, res) => {
     res.render('pages/game');
 });
+
+app.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.render('pages/login', {
+        message: `Successfully Logged Out`,
+    });
+});
