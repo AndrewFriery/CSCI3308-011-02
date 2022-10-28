@@ -117,3 +117,7 @@ const auth = (req, res, next) => {
 
 // Authentication Required
 app.use(auth);
+
+app.get('/game', (req, res) => {
+    res.render('pages/game');
+});
