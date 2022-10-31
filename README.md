@@ -26,4 +26,4 @@ StrawHats
   
 ### Team Communication
 
-- We are communication through text message. We have created a group text message with everyone in there and may also be doing discord but still undecided. We will aim to communicate multiple times a week.
+- We are communicating through text message. We have created a group text message with everyone. We will aim to communicate multiple times a week.
