@@ -26,7 +26,7 @@ StrawHats
   
 ### Team Communication
 
-- We are communicating through text message. We have created a group text message with everyone. We will aim to communicate multiple times a week.
+- We are communicating through text message. We have created a group text message with everyone. We will aim to communicate multiple times a week. <br />
 TA MEETINGS:
 - #1 Thu, Nov 3 9:15 AM
 - #2 Tue, Nov 8 5:30 PM
