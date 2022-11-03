@@ -99,14 +99,15 @@ app.post('/login', async (req, res) => {
             }
             else {
                 res.render('pages/register', {
-                    message: `Incorrect Password`,
+                    error: true,
+                    message: `Incorrect Password`
                 });
             }
         })
         .catch((error) => {
             res.render('pages/login', {
                 error: true,
-                message: `Username Wasn't Recognized!`,
+                message: `Username Wasn't Recognized!`
             });
         })
 });
