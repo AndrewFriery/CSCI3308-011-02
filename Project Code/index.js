@@ -6,7 +6,7 @@ const session = require('express-session');
 const bcrypt = require('bcrypt');
 const axios = require('axios');
 
-// database configuration
+// database configuration, config in env
 const dbConfig = {
     host: 'db',
     port: 5432,
