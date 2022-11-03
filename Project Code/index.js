@@ -134,3 +134,4 @@ app.get('/logout', (req, res) => {
         message: `Successfully Logged Out`,
     });
 });
+
