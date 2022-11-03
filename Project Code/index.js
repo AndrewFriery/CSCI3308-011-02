@@ -47,11 +47,7 @@ app.use(
 app.listen(3000);
 console.log('Server is listening on port 3000');
 
-app.get('/home', (req, res) => {
-    res.redirect('/anotherRoute'); //this will call the /anotherRoute route in the API
-});
-
-app.get('/anotherRoute', (req, res) => {
+app.get('/', (req, res) => {
     res.redirect('/login')
 });
 
@@ -120,6 +116,14 @@ app.use(auth);
 
 app.get('/game', (req, res) => {
     res.render('pages/game');
+});
+
+app.get('/leaderboard', (req, res) => {
+    res.render('pages/leaderboard');
+});
+
+app.get('/stats', (req, res) => {
+    res.render('pages/stats');
 });
 
 app.get('/logout', (req, res) => {
