@@ -1,10 +1,12 @@
 https://images.deepai.org/machine-learning-models/d4b1dd3ee43648a997650dc7f9e6923f/panda.jpeg
-https://api.deepai.org/job-view-file/ca03986f-4d3e-4245-8c59-6bddf2074dcb/outputs/output.jpg
-https://api.deepai.org/job-view-file/333b596d-8aca-4614-b5ce-864f94a017b8/outputs/output.jpg
-https://api.deepai.org/job-view-file/f8387214-933b-4bdb-9532-6acbe7fcc9b0/outputs/output.jpg
-https://api.deepai.org/job-view-file/9a3dd5aa-c417-4e97-b9af-0057cb2bc7d2/outputs/output.jpg
-https://api.deepai.org/job-view-file/3becf6db-9829-400b-b1e0-943f062eb65c/outputs/output.jpg
-https://api.deepai.org/job-view-file/ebd2ecf5-d931-4b89-a017-7ee01c418253/outputs/output.jpg
-https://api.deepai.org/job-view-file/d2a33152-84b7-4993-bca2-95a28c9c8ccb/outputs/output.jpg
-https://api.deepai.org/job-view-file/c35f7da7-4c6b-4400-8a26-dda189f1cad5/outputs/output.jpg
-https://api.deepai.org/job-view-file/acf47fef-d3d1-4841-a30b-6fb511b49ab9/outputs/output.jpg
+
+https://images.nightcafe.studio/jobs/DotKrjOyVQLLemHGtDcB/DotKrjOyVQLLemHGtDcB--4--2zgue.jpg?tr=w-1600,c-at_max   (might expire) dark souls
+https://images.nightcafe.studio/jobs/DotKrjOyVQLLemHGtDcB/DotKrjOyVQLLemHGtDcB--1--4uyfc.jpg?tr=w-1600,c-at_max   (might expire) dark souls
+https://images.nightcafe.studio/jobs/DotKrjOyVQLLemHGtDcB/DotKrjOyVQLLemHGtDcB--2--14gdj.jpg?tr=w-1600,c-at_max   (might expire) dark souls
+https://images.nightcafe.studio/jobs/XNWxYAHBJAild2p3eZDY/XNWxYAHBJAild2p3eZDY--3--tbqh2.jpg?tr=w-1600,c-at_max   (might expire) end of the world
+https://images.nightcafe.studio/jobs/XNWxYAHBJAild2p3eZDY/XNWxYAHBJAild2p3eZDY--2--xhjpk.jpg?tr=w-1600,c-at_max   (might expire) end of the world
+https://images.nightcafe.studio/jobs/AeUBLZQyMDDlO7yNGFol/AeUBLZQyMDDlO7yNGFol--2--26jxz.jpg?tr=w-1600,c-at_max   (might expire) yhorm the giant
+https://images.nightcafe.studio/jobs/71JunKppzV3w3n3KC7ay/71JunKppzV3w3n3KC7ay.jpg?tr=w-1600,c-at_max             (might expire) gates to hell
+https://images.nightcafe.studio/jobs/q8oeVT5MgTJw6uKgnydo/q8oeVT5MgTJw6uKgnydo--4--0tniu.jpg?tr=w-1600,c-at_max   (might expire) sunset over the mountain range
+https://images.nightcafe.studio/jobs/q8oeVT5MgTJw6uKgnydo/q8oeVT5MgTJw6uKgnydo--3--be15v.jpg?tr=w-1600,c-at_max   (might expire) sunset over the mountain range
+https://images.nightcafe.studio/jobs/jn2JLN4rTdg2RQ6p51vX/jn2JLN4rTdg2RQ6p51vX--1--zxdif.jpg?tr=w-1600,c-at_max   (might expire) jungle canopy
