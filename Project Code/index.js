@@ -4,7 +4,6 @@ const pgp = require('pg-promise')();
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
-const axios = require('axios');
 
 // database configuration
 const dbConfig = {

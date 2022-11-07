@@ -15,10 +15,20 @@
                         <% art.forEach(function(image) { %>
                             <tr>
                                 <td>
-                                    <%= image %>
+                                    <%= image.imageid %>
+                                </td>
+                                <td>
+                                    <img src="<%- image.imageurl %>" style="width: 200px;">
+                                </td>
+                                <td>
+                                    <%= image.imagetype %>
+                                </td>
+                                <td>
+                                    <%= image.imagedescription %>
                                 </td>
                             </tr>
-                            <% }); %>
+                            <% console.log(image) %>
+                                <% }); %>
                     </table>
         </main>
 
