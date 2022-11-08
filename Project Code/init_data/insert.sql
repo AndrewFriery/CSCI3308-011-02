@@ -32,6 +32,16 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 ('https://imgur.com/gEBoH24.jpg','AI',''),
 ('https://i.imgur.com/gNF2GIH.jpg','AI',''),
 ('https://i.imgur.com/5DHMplh.jpg','AI',''),
+('https://i.imgur.com/fKajOE2.jpg','Real','My Cup Runneth Over, Stanley Rayfield'),
+('https://i.imgur.com/nVd0bqM.jpg','Real','Insight, Raphaella Spence'),
+('https://i.imgur.com/vSrQWrX.jpg','Real','Bus shelter 1, Dan Witz'),
+('https://i.imgur.com/Vh2cnWt.jpg','Real','Still life with water glass, Ralph Goings'),
+('https://i.imgur.com/5RkuObO.jpg','Real','Fortress, Jeremy Geddes'),
+('https://i.imgur.com/cLvfwdP.jpg','Real','Yellow Iris, Erin Hanson'),
+('https://i.imgur.com/499nwhz.jpg','Real','Winter, Ivan Shishkin'),
+('https://i.imgur.com/sGksSJn.jpg','Real','The Regatta, Theo van Rysselberghe'),
+('https://i.imgur.com/NeKgRa8.jpg','Real','A shorthorn cow, Henry Stafford'),
+('https://i.imgur.com/EzIlI9c.jpg','Real','Whistlejacket, George Stubbs'),
 --Zach
 --Ian Stewart
 ('https://images.nightcafe.studio/jobs/DotKrjOyVQLLemHGtDcB/DotKrjOyVQLLemHGtDcB--4--2zgue.jpg?tr=w-1600,c-at_max','AI','dark souls'),
