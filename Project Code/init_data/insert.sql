@@ -2,14 +2,14 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 --Stephen
 ('https://i.imgur.com/jt0vy4o.jpg','AI','Bob'),
 ('https://i.imgur.com/yzU1l7d.jpg','AI','Bowl'),
-('https://i.imgur.com/dBizvo5.jpg','AI','Cat'),
+('https://i.imgur.com/xUMGSdi.jpg','AI','Cat'),
 ('https://i.imgur.com/kLosgLf.jpg','AI','Dancing'),
-('https://i.imgur.com/H2prdYC.jpg','AI','Homecoming'),
+('https://i.imgur.com/Fzup0Jw.jpg','AI','Homecoming'),
 ('https://i.imgur.com/ahMfCjg.jpg','AI','House'),
 ('https://i.imgur.com/rV5OjrH.jpg','AI','Jesus'),
 ('https://i.imgur.com/D4lqEKY.jpg','AI','Panda'),
-('https://i.imgur.com/QwVIdJr.jpg','AI','School'),
-('https://i.imgur.com/RFhxWQV.jpg','AI','Skull'),
+('https://i.imgur.com/Ceyv64G.jpg','AI','School'),
+('https://i.imgur.com/XpXUR4z.jpg','AI','Skull'),
 ('https://imgc.artprintimages.com/img/print/destination-signs-key-west-florida_u-l-pz52i30.jpg?artHeight=900&artPerspective=n&artWidth=900&background=fbfbfb','Real','Philippe Hugonnard'),
 ('https://www.boredpanda.com/blog/wp-content/uploads/2018/03/ugly-medieval-cats-art-103-5aafaff5c7b63__700.jpg','Real','Unknown'),
 ('https://pyxis.nymag.com/v1/imgs/bea/948/f6fcdc2fcbee41e96fdabd3be1cd0faf33-bonhams-cats-lot-68.rhorizontal.w807.jpg','Real','Henriette Ronner-Knip'),
@@ -21,7 +21,17 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 ('http://cdn.cnn.com/cnnnext/dam/assets/190516115302-h-r-giger-1.jpg','Real','H.R. Giger'),
 ('https://www.rct.uk/sites/default/files/styles/rctr-scale-1010w/public/256209-1330622370.jpg?itok=5HZ5Wwx_','Real','Portrait of a Man'),
 --Nick
---Nathan
+--Andrew
+('https://imgur.com/wiYF654.jpg','AI',''),
+('https://imgur.com/RZ2wXLM.jpg','AI',''),
+('https://imgur.com/n5tewlW.jpg','AI',''),
+('https://imgur.com/QBu3UI9.jpg','AI',''),
+('https://imgur.com/4RDRF9M.jpg','AI',''),
+('https://i.imgur.com/Zel1G1F.jpg','AI',''),
+('https://i.imgur.com/0aWNwsi.jpg','AI',''),
+('https://imgur.com/gEBoH24.jpg','AI',''),
+('https://i.imgur.com/gNF2GIH.jpg','AI',''),
+('https://i.imgur.com/5DHMplh.jpg','AI',''),
 --Zach
 --Ian Stewart
 ('https://images.nightcafe.studio/jobs/DotKrjOyVQLLemHGtDcB/DotKrjOyVQLLemHGtDcB--4--2zgue.jpg?tr=w-1600,c-at_max','AI','dark souls'),
