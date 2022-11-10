@@ -20,27 +20,28 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 ('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/american-flag-flat-waving-v1-copy-6-roy-wylam.jpg','Real','Roy Wylam'),
 ('http://cdn.cnn.com/cnnnext/dam/assets/190516115302-h-r-giger-1.jpg','Real','H.R. Giger'),
 ('https://www.rct.uk/sites/default/files/styles/rctr-scale-1010w/public/256209-1330622370.jpg?itok=5HZ5Wwx_','Real','Portrait of a Man'),
+
 --Nick
-('https://i.imgur.com/JYmTZHB.jpg','AI',''),
-('https://i.imgur.com/lpPyJWD.jpg','AI',''),
-('https://i.imgur.com/twRXIPS.jpg','AI',''),
-('https://i.imgur.com/0X3QBhd.jpg','AI',''),
-('https://i.imgur.com/P4cnhGs.jpg','AI',''),
-('https://i.imgur.com/TcvWEJc.jpg','AI',''),
--- ('','AI',''),
--- ('','AI',''),
--- ('','AI',''),
--- ('','AI',''),
-('https://i.imgur.com/rFBlGpp.jpg','Real',''),
--- ('','Real',''),
--- ('','Real',''),
--- ('','Real',''),
--- ('','Real',''),
--- ('','Real',''),
--- ('','Real',''),
--- ('','Real',''),
--- ('','Real',''),
--- ('','Real',''),
+('https://i.imgur.com/JYmTZHB.jpg','AI','Abstract house on a rainy day'),
+('https://i.imgur.com/lpPyJWD.jpg','AI','Black woman painting'),
+('https://i.imgur.com/twRXIPS.jpg','AI','Drooping sunflower pot in a dimly lit room painting'),
+('https://i.imgur.com/0X3QBhd.jpg','AI','Japanese style wave painting zoomed out paper texture'),
+('https://i.imgur.com/P4cnhGs.jpg','AI','Award winning ai art'),
+('https://i.imgur.com/TcvWEJc.jpg','AI','Award winning ai art'),
+('https://i.imgur.com/4PkkbHW.jpg','AI','Gotten from thispersondoesnotexist.com'),
+('https://i.imgur.com/MBAcE7p.jpg','AI','Castle clipart'),
+('https://i.imgur.com/cwJJpjR.jpg','AI','A sun is born in an ethereal gas cloud nebula, painted by Alphonse Mucha and peter mohrbacher, with multiple matte black boarders on black paper background'),
+('https://i.imgur.com/Sxwdqs5.jpg','AI','A coloring book page of a man desperately swimming'),
+('https://i.imgur.com/rFBlGpp.jpg','Real','Study of a Young Woman - Johannes Vermeer'),
+('https://i.imgur.com/hXcEQ5v.jpg','Real','Forest Man Painting - Ashley Parker Owens'),
+('https://i.imgur.com/l813vnw.jpg','Real','Fantasy castle'),
+('https://i.imgur.com/q6JEj7U.jpg','Real','El Greco - Self Portrait'),
+('https://i.imgur.com/lc9DSNi.jpg','Real','The Jurist - Giuseppe Arcimboldo'),
+('https://i.imgur.com/1rqnxTq.jpg','Real','neutral face person'),
+('https://i.imgur.com/y3aUfZ8.jpg','Real','white chair picture'),
+('https://i.imgur.com/LqDYpNN.jpg','Real','The New Light'),
+('https://i.imgur.com/CCdo6np.jpg','Real','Modern Digital Art'),
+('https://i.imgur.com/ZNWEcF9.jpg','Real','Blurry beach background'),
 
 --Andrew
 ('https://imgur.com/wiYF654.jpg','AI',''),
@@ -63,6 +64,7 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 ('https://i.imgur.com/sGksSJn.jpg','Real','The Regatta, Theo van Rysselberghe'),
 ('https://i.imgur.com/NeKgRa8.jpg','Real','A shorthorn cow, Henry Stafford'),
 ('https://i.imgur.com/EzIlI9c.jpg','Real','Whistlejacket, George Stubbs'),
+
 --Zach
 ('https://i.imgur.com/1rwRORm.jpeg','AI','Panda in Pool'),
 ('https://i.imgur.com/603q9WK.jpeg','AI','Sunrise with Mountains'),
@@ -84,6 +86,7 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTb4U-QMvU1Gd7YC1S3nC9l8HDAVG9v2q3BQ&usqp=CAU','Real','Skull'),
 ('https://dreamsinparis.com/wp-content/uploads/2022/05/Impression-Sunrise-by-Claude-Monet2-1024x786.jpg','Real','Claude Monet'),
 ('https://sep.yimg.com/ty/cdn/madisonartshop/most-famous-paintings-20.jpg?t=1660737943&','Real','Dogs Playing Poker'),
+
 --Ian Stewart
 ('https://images.nightcafe.studio/jobs/DotKrjOyVQLLemHGtDcB/DotKrjOyVQLLemHGtDcB--4--2zgue.jpg?tr=w-1600,c-at_max','AI','dark souls'),
 ('https://images.nightcafe.studio/jobs/DotKrjOyVQLLemHGtDcB/DotKrjOyVQLLemHGtDcB--1--4uyfc.jpg?tr=w-1600,c-at_max','AI','dark souls'),
@@ -105,6 +108,7 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 ('https://img.artpal.com/96513/5-15-3-8-15-42-4m.jpg','Real','Steve Armstrong'),
 ('https://www.simplemost.com/wp-content/uploads/2021/12/AdobeStock_125898822.jpeg','Real','vovik_mar'),
 ('https://i.pinimg.com/originals/70/83/e0/7083e058abafbaa41e0284f8cfa4fbc7.jpg','Real','Charles Hartley'),
+
 --Ian Von Pechmann
 ('https://i.imgur.com/wv2417y.png','AI',''),
 ('https://i.imgur.com/lWj9S7x.png','AI',''),
