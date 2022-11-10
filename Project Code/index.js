@@ -117,19 +117,23 @@ const auth = (req, res, next) => {
 // Authentication Required
 app.use(auth);
 
-app.get('/game', (req, res) => {
+app.get('/pictures', (req, res) => {
     let query = `SELECT * FROM images;`;
     db.any(query)
         .then((art) => {
-            res.render('pages/game', {
+            res.render('pages/pictures', {
                 art,
             });
         })
         .catch((error) => {
-            res.render('pages/game', {
-                message: `Game Failed to Load`,
+            res.render('pages/pictures', {
+                message: `Pictures Failed to Load`,
             });
         })
+});
+
+app.get('/game', (req, res) => {
+    res.render('pages/game');
 });
 
 app.get('/logout', (req, res) => {

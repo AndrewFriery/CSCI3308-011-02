@@ -1,0 +1,35 @@
+<%- include ('../partials/header') %>
+    <%- include ('../partials/menu') %>
+
+        <main>
+            <div class="container">
+                <%- include ('../partials/message') %>
+                    <h1>This is the game page</h1>
+                    <table style="width: 100%;" id="course_table">
+                        <tr>
+                            <th>Image ID</th>
+                            <th>Image</th>
+                            <th>Image Type</th>
+                            <th>Image Description</th>
+                        </tr>
+                        <% art.forEach(function(image) { %>
+                            <tr>
+                                <td>
+                                    <%= image.imageid %>
+                                </td>
+                                <td>
+                                    <img src="<%- image.imageurl %>" style="width: 200px;">
+                                </td>
+                                <td>
+                                    <%= image.imagetype %>
+                                </td>
+                                <td>
+                                    <%= image.imagedescription %>
+                                </td>
+                            </tr>
+                            <% console.log(image) %>
+                                <% }); %>
+                    </table>
+        </main>
+
+        <%- include ('../partials/footer') %>
