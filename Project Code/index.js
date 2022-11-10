@@ -118,18 +118,7 @@ const auth = (req, res, next) => {
 app.use(auth);
 
 app.get('/game', (req, res) => {
-    let query = `SELECT * FROM images;`;
-    db.any(query)
-        .then((art) => {
-            res.render('pages/game', {
-                art,
-            });
-        })
-        .catch((error) => {
-            res.render('pages/game', {
-                message: `Game Failed to Load`,
-            });
-        })
+    res.render('pages/game');
 });
 
 app.get('/logout', (req, res) => {
