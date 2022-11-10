@@ -1,10 +1,12 @@
-Meeting Date:
-time:
+Meeting Date: 11/3/22
+Time: 9:15am - 9:30am
 
 1. Decisions Made
-    -
+    - Update user stories
+    - Finalize database structure
 2. Alternative Actions/Options Discussed
-    -
+    - Potentially implement async function in the future to generate ai images on program run
 3. Follow-up items, including agreed-on roles and responsibilities
-    -
+    - Update the database framework (Stephen)
+    - Find 10 ai and 10 real images (Everyone)
     
