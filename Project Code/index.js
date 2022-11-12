@@ -124,7 +124,19 @@ const auth = (req, res, next) => {
 app.use(auth);
 
 app.get('/game', (req, res) => {
-    res.render('pages/game');
+    const number=Math.floor(Math.random() * 120);
+    let query = `SELECT * FROM images WHERE images.imageID = '${number}';`;
+        db.any(query)
+            .then((art) => {
+                res.render('pages/game', {
+                    art,
+                });
+            })
+            .catch((error) => {
+                res.render('pages/game', {
+                    message: `Game Failed to Load`,
+                });
+            })
 });
 
 app.get('/logout', (req, res) => {
