@@ -160,6 +160,18 @@ app.get('/users', (req, res) => {
         })
 });
 
+/* app.delete('/users/delete', (req, res) => {
+    let query = `DELETE FROM users WHERE users.username=$1';`;
+    db.any(query)
+    .then((rows) => {
+        res.send({"message": "User deleted successfully"});
+        res.redirect('/users');
+    })
+    .catch((error) => {
+        res.send({'message' : error});
+    });
+}); */
+
 app.get('/game', (req, res) => {
     res.render('pages/game');
 });

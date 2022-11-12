@@ -5,7 +5,20 @@
             <div class="container">
                 <%- include ('../partials/message') %>
                     <h1>Welcome Admin!</h1>
-                    <h2>This is the Pictures Database</h2>
+                    <h2>
+                        <table>
+                            <th>
+                                This is the Pictures Database
+                            </th>
+                            <th>
+                                <form action="/admin" method="GET">
+                                    <input type="hidden" class="form-control" id="back_to_admin" value=""
+                                        name="user_username" />
+                                    <button type="submit" class="btn btn-secondary">Back</button>
+                                </form>
+                            </th>
+                        </table>
+                    </h2>
                     <table style="width: 100%;" id="pictures_table">
                         <tr>
                             <th>Image ID</th>
