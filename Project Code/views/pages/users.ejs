@@ -5,32 +5,28 @@
             <div class="container">
                 <%- include ('../partials/message') %>
                     <h1>Welcome Admin!</h1>
-                    <h2>This is the Pictures Database</h2>
+                    <h2>This is the Users Database</h2>
                     <table style="width: 100%;" id="pictures_table">
                         <tr>
-                            <th>Image ID</th>
-                            <th>Image</th>
-                            <th>Image Type</th>
-                            <th>Image Description</th>
+                            <th>Username</th>
+                            <th>High Score</th>
+                            <th>Total Images</th>
                         </tr>
-                        <% art.forEach(function(image) { %>
+                        <% people.forEach(function(user) { %>
                             <tr>
                                 <td>
-                                    <%= image.imageid %>
+                                    <%= user.username %>
                                 </td>
                                 <td>
-                                    <img src="<%- image.imageurl %>" style="width: 20%;">
+                                    <%= user.highscore %>
                                 </td>
                                 <td>
-                                    <%= image.imagetype %>
-                                </td>
-                                <td>
-                                    <%= image.imagedescription %>
+                                    <%= user.totalimages %>
                                 </td>
                                 <td>
                                     <form action="" method="">
-                                        <input type="hidden" class="form-control" id="<%=image.imageid %>"
-                                            value="<%-image.imageid %>" name="image_id" />
+                                        <input type="hidden" class="form-control" id="<%=user.username %>"
+                                            value="<%-user.username %>" name="user_username" />
                                         <button type="submit" class="btn btn-danger">Delete</button>
                                     </form>
                                 </td>

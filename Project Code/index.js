@@ -145,6 +145,21 @@ app.get('/pictures', (req, res) => {
         })
 });
 
+app.get('/users', (req, res) => {
+    let query = `SELECT * FROM users;`;
+    db.any(query)
+        .then((people) => {
+            res.render('pages/users', {
+                people,
+            });
+        })
+        .catch((error) => {
+            res.render('pages/users', {
+                message: `Users Failed to Load`,
+            });
+        })
+});
+
 app.get('/game', (req, res) => {
     res.render('pages/game');
 });
