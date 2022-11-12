@@ -1,20 +1,58 @@
 <%- include ('../partials/header') %>
     <%- include ('../partials/menu') %>
+        <style>
+            h1 {
+                text-align: center;
+            }
 
+            table {
+                text-align: center;
+            }
+        </style>
         <main>
+            <h1>Welcome Admin!</h1>
+            <h1>Which Page Would You Like to View?</h1>
             <div class="container">
                 <%- include ('../partials/message') %>
-                    <h1>Welcome Admin!</h1>
-                    <form action="/users" method="GET">
-                        <input type="hidden" class="form-control" id="admin_users"
-                            value="" name="admin_users" />
-                        <button type="submit" class="btn btn-danger">Users</button>
-                    </form>
-                    <form action="/pictures" method="GET">
-                        <input type="hidden" class="form-control" id="admin_pictures"
-                            value="" name="admin_pictures" />
-                        <button type="submit" class="btn btn-danger">Pictures</button>
-                    </form>
+
+                    <div>
+                        <table style="margin:auto">
+                            <th>
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top"
+                                        src="https://cdn1.iconfinder.com/data/icons/ui-colored-3-of-3/100/UI_3__23-512.png">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Users Database</h5>
+                                        <p class="card-text">Go to the users database. Here you can see every user,
+                                            along
+                                            with their highscore and total images. You can also delete users.</p>
+                                        <form action="/users" method="GET">
+                                            <input type="hidden" class="form-control" id="admin_users" value=""
+                                                name="admin_users" />
+                                            <button type="submit" class="btn btn-primary">Users</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </th>
+                            <th>
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="https://i.imgur.com/D4lqEKY.jpg">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pictures Database</h5>
+                                        <p class="card-text">Go to the pictures database. Here you can see every
+                                            pictures,
+                                            along with its ID, type, and description. You can also delete pictures.
+                                        </p>
+                                        <form action="/pictures" method="GET">
+                                            <input type="hidden" class="form-control" id="admin_pictures" value=""
+                                                name="admin_pictures" />
+                                            <button type="submit" class="btn btn-success">Pictures</button>
+                                        </form>
+                                    </div>
+                            </th>
+                        </table>
+                    </div>
+            </div>
         </main>
 
         <%- include ('../partials/footer') %>
