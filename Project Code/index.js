@@ -94,6 +94,9 @@ app.post('/login', async (req, res) => {
                 };
 
                 req.session.save();
+                if (username=='admin'){
+                    res.redirect('/admin');
+                }
                 res.redirect('/game');
             }
             else {
@@ -122,6 +125,10 @@ const auth = (req, res, next) => {
 
 // Authentication Required
 app.use(auth);
+
+app.get('/admin', (req, res) => {
+    res.render('pages/admin');
+});
 
 app.get('/pictures', (req, res) => {
     let query = `SELECT * FROM images;`;

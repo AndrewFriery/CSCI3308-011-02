@@ -1,0 +1,20 @@
+<%- include ('../partials/header') %>
+    <%- include ('../partials/menu') %>
+
+        <main>
+            <div class="container">
+                <%- include ('../partials/message') %>
+                    <h1>Welcome Admin!</h1>
+                    <form action="" method="">
+                        <input type="hidden" class="form-control" id="admin_users"
+                            value="" name="admin_users" />
+                        <button type="submit" class="btn btn-danger">Users</button>
+                    </form>
+                    <form action="/pictures" method="GET">
+                        <input type="hidden" class="form-control" id="admin_pictures"
+                            value="" name="admin_pictures" />
+                        <button type="submit" class="btn btn-danger">Pictures</button>
+                    </form>
+        </main>
+
+        <%- include ('../partials/footer') %>

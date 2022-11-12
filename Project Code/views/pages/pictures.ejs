@@ -4,8 +4,8 @@
         <main>
             <div class="container">
                 <%- include ('../partials/message') %>
-                    <h1>This is the game page</h1>
-                    <table style="width: 100%;" id="course_table">
+                    <h1>Welcome Admin!</h1>
+                    <table style="width: 100%;" id="pictures_table">
                         <tr>
                             <th>Image ID</th>
                             <th>Image</th>
@@ -18,13 +18,20 @@
                                     <%= image.imageid %>
                                 </td>
                                 <td>
-                                    <img src="<%- image.imageurl %>" style="width: 200px;">
+                                    <img src="<%- image.imageurl %>" style="width: 20%;">
                                 </td>
                                 <td>
                                     <%= image.imagetype %>
                                 </td>
                                 <td>
                                     <%= image.imagedescription %>
+                                </td>
+                                <td>
+                                    <form action="" method="">
+                                        <input type="hidden" class="form-control" id="<%=image.imageid %>"
+                                            value="<%-image.imageid %>" name="image_id" />
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                             <% console.log(image) %>
