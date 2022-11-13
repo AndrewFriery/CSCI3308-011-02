@@ -91,6 +91,7 @@ app.post('/login', async (req, res) => {
             if (match) {
                 req.session.user = {
                     api_key: process.env.API_KEY,
+                    score: 0
                 };
 
                 req.session.save();
@@ -148,6 +149,33 @@ app.get('/game', (req, res) => {
             });
         })
 });
+
+app.post('/endGame', (req, res) => {
+    // Update user's high score in the database
+    
+    
+    // Reset user's score to 0
+    req.session.user.score = 0;
+
+    // Render a lose page.
+
+});
+
+app.get('/updateScore/:imageType/:userGuess', (req, res) => {
+    imageType = req.params.imageType;
+    userGuess = req.params.userGuess;
+    if(imageType == userGuess){
+        req.session.user.score += 1;
+        res.redirect('/game');
+    }
+    else{
+        res.redirect('/endGame')
+    }
+    res.render('pages/login', {
+        message: `Successfully Logged Out`,
+    });
+});
+
 
 app.get('/logout', (req, res) => {
     req.session.destroy();
