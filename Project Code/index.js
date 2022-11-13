@@ -135,6 +135,27 @@ app.get('/stats', (req, res) => {
     res.render('pages/stats');
 });
 
+app.get('/stats', (req, res) => {
+    const username = req.body.username;
+    let query = `SELECT * FROM users WHERE users.username = '${username}';`;
+
+    db.any(query)
+        .then(user => {
+            let userData = [user[0].username, user[0].highscore, user[0].totalImages];
+            console.log(userData)
+            req.session.save();
+            res.render('pages/stats', {
+                data: userData
+            });
+        })
+        .catch((error) => {
+            res.render('pages/stats', {
+                error: error,
+                message: `Error!`
+            });
+        })
+  });
+
 app.get('/logout', (req, res) => {
     req.session.destroy();
     res.render('pages/login', {
