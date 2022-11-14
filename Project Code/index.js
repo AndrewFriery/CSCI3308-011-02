@@ -111,18 +111,6 @@ app.post('/login', async (req, res) => {
         })
 });
 
-// returns 10 highest scoring users in descending order
-app.get('/leaderboard', function (req, res) {
-    var query = "SELECT username, highscore FROM users ORDER BY users.highscore DESC LIMIT 10;";
-    db.any(query)
-      .then(function (rows) {
-        res.send(rows);
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-});
-
 // Authentication Middleware.
 const auth = (req, res, next) => {
     if (!req.session.user) {
