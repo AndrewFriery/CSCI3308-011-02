@@ -90,7 +90,7 @@ app.post('/login', async (req, res) => {
 
             if (match) {
                 req.session.user = {
-                    api_key: process.env.API_KEY,
+                    username: req.body.username
                 };
 
                 req.session.save();
@@ -131,25 +131,30 @@ app.get('/leaderboard', (req, res) => {
     res.render('pages/leaderboard');
 });
 
+/*
 app.get('/stats', (req, res) => {
     res.render('pages/stats');
 });
+*/
 
 app.get('/stats', (req, res) => {
-    const username = req.body.username;
+    const username = req.session.user.username;
+    console.log(username);
     let query = `SELECT * FROM users WHERE users.username = '${username}';`;
 
     db.any(query)
         .then(user => {
-            let userData = [user[0].username, user[0].highscore, user[0].totalImages];
-            console.log(userData)
-            req.session.save();
+            const userData = {username: user[0].username, highscore: user[0].highscore, totalImages: user[0].totalImages};
+            console.log(userData);
+            console.log("Test");
             res.render('pages/stats', {
                 data: userData
             });
         })
         .catch((error) => {
+            console.log("bruh");
             res.render('pages/stats', {
+                data: '',
                 error: error,
                 message: `Error!`
             });

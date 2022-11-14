@@ -4,9 +4,13 @@
 <main>
     <div class="container">
         <%- include ('../partials/message') %>
-        <h1>User's Stats</h1>
-        <p>High Score: highScore</p>
-        <p>Images Seen: totalImages</p>
+        <% if(data) { %>
+            <h1><%= data.username %>'s Stats</h1>
+            <p>High Score: <%= data.hgihscore %></p>
+            <p>Images Seen: <%= data.totalImages %></p>
+        <% } else { %>
+            <h1>User data not found</h1>
+        <% } %>
 </main>
 
 <%- include ('../partials/footer') %>
