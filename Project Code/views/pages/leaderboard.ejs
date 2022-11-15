@@ -4,20 +4,26 @@
         <main>
             <div class="container">
                 <%- include ('../partials/message') %>
-                <table style="width:100%">
-                    <tr>
-                        <th>Username</th>
-                        <th>Score</th>
-                    </tr>
-                    <% users.forEach( users => { %>
-                        if (!users.highscore) {
+                    <table style="width:100%">
+                        <tr>
+                            <th>Username</th>
+                            <th>Score</th>
+                            <th>Total Images</th>
+                        </tr>
+                        <% people.forEach(function(user) { %>
                             <tr>
-                                <td><%users.username%></td>
-                                <td><%users.highscore%></td>
+                                <td>
+                                    <%= user.username %>
+                                </td>
+                                <td>
+                                    <%= user.highscore %>
+                                </td>
+                                <td>
+                                    <%= user.totalimages %>
+                                </td>
                             </tr>
-                        } %>
-                    <% } %>
-                </table>
+                            <% }); %>
+                    </table>
         </main>
 
         <%- include ('../partials/footer') %>

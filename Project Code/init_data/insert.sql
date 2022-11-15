@@ -133,13 +133,13 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 
 --User dummy data
 INSERT INTO users (username, password, highscore, totalImages) VALUES
-('John', 'password', 4, 5),
-('Jill', 'password1', 10, 11),
-('Jack', 'password2', 2, 3),
-('Bob', 'password3', 24, 25),
-('Alex', 'password4', 67, 68),
-('Jaclyn', 'password5', 7, 8),
-('Maya', 'password6', 7, 8),
-('Julio', 'password7', 12, 13),
-('Juan', 'password8', 5, 6),
-('Luke', 'password9', 34, 35);
+('John', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 4, 5),
+('Jill', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 10, 11),
+('Jack', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 2, 3),
+('Bob', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 24, 25),
+('Alex', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 67, 68),
+('Jaclyn', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 7, 8),
+('Maya', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 7, 8),
+('Julio', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 12, 13),
+('Juan', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 5, 6),
+('Luke', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 34, 35);
