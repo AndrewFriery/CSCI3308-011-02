@@ -94,7 +94,7 @@ app.post('/login', async (req, res) => {
                 };
 
                 req.session.save();
-                res.redirect('/game');
+                res.redirect('/home');
             }
             else {
                 res.render('pages/register', {
@@ -141,6 +141,11 @@ app.use(auth);
 
 app.get('/game', (req, res) => {
     res.render('pages/game');
+});
+
+app.get('/home', (req, res) => {
+    const username = req.session.user.username;
+    res.render('pages/home');
 });
 
 app.get('/leaderboard', (req, res) => {
