@@ -113,7 +113,7 @@ app.post('/login', async (req, res) => {
 
 // returns the top 10 users ordered by high scroe
 app.get('/leaderboard', (req, res) => {
-    let query = `SELECT * FROM users ORDER BY users.highscore DESC LIMIT 10;`;
+    let query = `SELECT * FROM users ORDER BY users.highscore DESC;`;
     db.any(query)
         .then((people) => {
             res.render('pages/leaderboard', {
