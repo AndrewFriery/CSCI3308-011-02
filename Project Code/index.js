@@ -153,18 +153,31 @@ app.get('/game', (req, res) => {
         })
 });
 
-app.post('/endGame', (req, res) => {
+app.put('/endGame', (req, res) => {
+    console.log("Test");
     // Grab the user's high score from the database
     let search = `SELECT * FROM users WHERE username = '${req.session.user.username}';`;
     db.any(search)
         .then((user) => {
             // Check if high score is less than current score
             previousHighscore = user.highscore;
-            currentScore = req.session.user.score
+            currentScore = req.session.user.score;
 
-            if (previousHighscore < currentScore) {
+            if(previousHighscore < currentScore){
                 // Update user's high score
-                console.log("Updating user's high score :)")
+                let query = 'UPDATE users set highscore = $2 where username = $1;';
+                db.any(query, [req.session.user.username, currentScore])
+                    .then(function (data) {
+                        res.status(201).json({
+                            status: 'success',
+                            data: data,
+                            message: 'data updated successfully'
+                        });
+                    })
+                    .catch(function (err) {
+                        // return console.log(err); I dont think we want to return here but this is what I had in lab 7
+                        console.log(err);
+                    });
             }
 
             // Reset user's score to 0
@@ -189,12 +202,12 @@ app.get('/updateScore/:imageType/:userGuess', (req, res) => {
     imageType = req.params.imageType;
     userGuess = req.params.userGuess;
     console.log(imageType);
-    if (imageType == userGuess) {
+    if(imageType == userGuess){
         req.session.user.score += 1;
         res.redirect('/game');
     }
-    else {
-        res.redirect('/endGame')
+    else{
+        res.redirect('/endGame');
     }
 });
 
