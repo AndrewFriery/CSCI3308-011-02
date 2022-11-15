@@ -91,7 +91,8 @@ app.post('/login', async (req, res) => {
             if (match) {
                 req.session.user = {
                     api_key: process.env.API_KEY,
-                    score: 0
+                    score: 0,
+                    username: username
                 };
 
                 req.session.save();
@@ -151,14 +152,35 @@ app.get('/game', (req, res) => {
 });
 
 app.post('/endGame', (req, res) => {
-    // Update user's high score in the database
-    
-    
-    // Reset user's score to 0
-    req.session.user.score = 0;
+    // Grab the user's high score from the database
+    let search = `SELECT * FROM users WHERE username = '${req.session.user.username}';`;
+    db.any(search)
+        .then((user) => {
+            // Check if high score is less than current score
+            previousHighscore = user.highscore;
+            currentScore = req.session.user.score
+            
+            if(previousHighscore < currentScore){
+                // Update user's high score
+                console.log("Updating user's high score :)")
+            }
 
-    // Render a lose page.
+            // Reset user's score to 0
+            req.session.user.score = 0;
 
+            // Render a lose page.
+            res.render('pages/lost', {
+                message: `You lost with a score of '${currentScore}'`,
+            });
+        })
+        .catch((error) => {
+            // Reset user's score to 0
+            currentScore = req.session.user.score;
+            req.session.user.score = 0;
+            res.render('pages/lost', {
+                message: `You lost with a score of '${currentScore}'`,
+            });
+        })
 });
 
 app.get('/updateScore/:imageType/:userGuess', (req, res) => {
@@ -171,9 +193,6 @@ app.get('/updateScore/:imageType/:userGuess', (req, res) => {
     else{
         res.redirect('/endGame')
     }
-    res.render('pages/login', {
-        message: `Successfully Logged Out`,
-    });
 });
 
 
