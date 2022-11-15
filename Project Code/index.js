@@ -111,6 +111,24 @@ app.post('/login', async (req, res) => {
         })
 });
 
+// returns the top 10 users ordered by high scroe
+app.get('/leaderboard', async(req, res) => {
+    var query = "SELECT username, highscore FROM users ORDER BY users.highscore DESC LIMIT 10;";
+    db.any(query)
+        .then(users => {
+            res.render('pages/leaderboard', {
+                users
+            });
+        })
+        .catch(err => {
+            res.render('pages/leaderboard', {
+                users: [],
+                error: true,
+                message: err.message,
+            });
+        });
+});
+
 // Authentication Middleware.
 const auth = (req, res, next) => {
     if (!req.session.user) {
