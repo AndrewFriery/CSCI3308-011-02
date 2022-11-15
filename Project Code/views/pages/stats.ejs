@@ -5,11 +5,16 @@
     <div class="container">
         <%- include ('../partials/message') %>
         <% if(data) { %>
-            <h1><%= data.username %>'s Stats</h1>
-            <p>High Score: <%= data.hgihscore %></p>
-            <p>Images Seen: <%= data.totalImages %></p>
+            <p class="fs-1 fw-bold"><%= data.username %>'s Stats</p>
+            <h1></h1>
+            <div>
+                <p class="fs-4">High Score: <%= data.highscore %></p>
+                <p class="fs-4">Images Seen: <%= data.totalImages %></p>
+            </div>
         <% } else { %>
-            <h1>User data not found</h1>
+            <div class="alert alert-danger" role="alert">
+                <h1>User data not found</h1>
+            </div>
         <% } %>
 </main>
 

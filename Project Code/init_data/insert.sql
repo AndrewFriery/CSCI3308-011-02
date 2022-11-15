@@ -130,3 +130,5 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 ('https://c4.wallpaperflare.com/wallpaper/924/878/435/sta%C5%84czyk-digital-art-joker-wallpaper-thumb.jpg','Real','Jan Matejko'),
 ('https://images.saatchiart.com/saatchi/696454/art/6518701/5588377-HSC00002-7.jpg','Real','Janaka Stagnaro'),
 ('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/surreal-tiger-bubble-water-dancer-daniel-eskridge.jpg','Real','Daniel Eskridge');
+
+INSERT INTO users (username, password, highscore, totalImages) VALUES ('LeperGecko', '$2b$10$fkAYLzHSAIkd6GEiVyh8nurIx1D1g52E9LpCudg675aJ59NIJZWYC', 5, 15);

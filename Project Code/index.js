@@ -144,15 +144,15 @@ app.get('/stats', (req, res) => {
 
     db.any(query)
         .then(user => {
-            const userData = {username: user[0].username, highscore: user[0].highscore, totalImages: user[0].totalImages};
+            console.log(user);
+            const userData = {username: user[0].username, highscore: user[0].highscore, totalImages: user[0].totalimages};
             console.log(userData);
-            console.log("Test");
             res.render('pages/stats', {
                 data: userData
             });
         })
         .catch((error) => {
-            console.log("bruh");
+            console.log("query not working");
             res.render('pages/stats', {
                 data: '',
                 error: error,
