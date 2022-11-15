@@ -68,12 +68,12 @@ app.post('/register', async (req, res) => {
         .then((rows) => {
             res.render('pages/login');
         })
-        .catch(function (err)  {
+        .catch(function (err) {
             res.render('pages/register', {
                 error: true,
                 message: "User already exists!"
             });
-        });   
+        });
 });
 
 app.get('/login', (req, res) => {
@@ -129,13 +129,13 @@ app.get('/game', (req, res) => {
     let search = `SELECT * FROM images;`;
     db.any(search)
         .then((images) => {
-            const count=images.length
-            const number=Math.floor(Math.random() * count);
+            const count = images.length
+            const number = Math.floor(Math.random() * count);
             let query = `SELECT * FROM images WHERE images.imageID = '${number}';`;
             db.any(query)
                 .then((art) => {
                     res.render('pages/game', {
-                         art,
+                        art,
                     });
                 })
                 .catch((error) => {
@@ -159,8 +159,8 @@ app.post('/endGame', (req, res) => {
             // Check if high score is less than current score
             previousHighscore = user.highscore;
             currentScore = req.session.user.score
-            
-            if(previousHighscore < currentScore){
+
+            if (previousHighscore < currentScore) {
                 // Update user's high score
                 console.log("Updating user's high score :)")
             }
@@ -186,11 +186,11 @@ app.post('/endGame', (req, res) => {
 app.get('/updateScore/:imageType/:userGuess', (req, res) => {
     imageType = req.params.imageType;
     userGuess = req.params.userGuess;
-    if(imageType == userGuess){
+    if (imageType == userGuess) {
         req.session.user.score += 1;
         res.redirect('/game');
     }
-    else{
+    else {
         res.redirect('/endGame')
     }
 });
