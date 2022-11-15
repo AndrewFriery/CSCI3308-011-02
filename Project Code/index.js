@@ -68,12 +68,12 @@ app.post('/register', async (req, res) => {
         .then((rows) => {
             res.render('pages/login');
         })
-        .catch(function (err)  {
+        .catch(function (err) {
             res.render('pages/register', {
                 error: true,
                 message: "User already exists!"
             });
-        });   
+        });
 });
 
 app.get('/login', (req, res) => {
@@ -112,21 +112,19 @@ app.post('/login', async (req, res) => {
 });
 
 // returns the top 10 users ordered by high scroe
-app.get('/leaderboard', async(req, res) => {
-    var query = "SELECT username, highscore FROM users ORDER BY users.highscore DESC LIMIT 10;";
+app.get('/leaderboard', (req, res) => {
+    let query = `SELECT * FROM users ORDER BY users.highscore DESC LIMIT 10;`;
     db.any(query)
-        .then(users => {
+        .then((people) => {
             res.render('pages/leaderboard', {
-                users
+                people,
             });
         })
-        .catch(err => {
+        .catch((error) => {
             res.render('pages/leaderboard', {
-                users: [],
-                error: true,
-                message: err.message,
+                message: `Leaderboard Failed to Load`,
             });
-        });
+        })
 });
 
 // Authentication Middleware.
