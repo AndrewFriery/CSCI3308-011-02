@@ -132,10 +132,12 @@ app.get('/game', (req, res) => {
             const count = images.length
             const number = Math.floor(Math.random() * count);
             let query = `SELECT * FROM images WHERE images.imageID = '${number}';`;
+            let score = req.session.user.score;
             db.any(query)
                 .then((art) => {
                     res.render('pages/game', {
                         art,
+                        score,
                     });
                 })
                 .catch((error) => {
@@ -186,6 +188,7 @@ app.post('/endGame', (req, res) => {
 app.get('/updateScore/:imageType/:userGuess', (req, res) => {
     imageType = req.params.imageType;
     userGuess = req.params.userGuess;
+    console.log(imageType);
     if (imageType == userGuess) {
         req.session.user.score += 1;
         res.redirect('/game');
@@ -194,7 +197,6 @@ app.get('/updateScore/:imageType/:userGuess', (req, res) => {
         res.redirect('/endGame')
     }
 });
-
 
 app.get('/logout', (req, res) => {
     req.session.destroy();
