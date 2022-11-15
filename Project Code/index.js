@@ -144,8 +144,10 @@ app.get('/game', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-    const username = req.session.user.username;
-    res.render('pages/home');
+    let username = req.session.user.username;
+    res.render('pages/home', {
+        username,
+    });
 });
 
 app.get('/leaderboard', (req, res) => {
@@ -166,7 +168,7 @@ app.get('/stats', (req, res) => {
     db.any(query)
         .then(user => {
             console.log(user);
-            const userData = {username: user[0].username, highscore: user[0].highscore, totalImages: user[0].totalimages};
+            const userData = { username: user[0].username, highscore: user[0].highscore, totalImages: user[0].totalimages };
             console.log(userData);
             res.render('pages/stats', {
                 data: userData
@@ -180,7 +182,7 @@ app.get('/stats', (req, res) => {
                 message: `Error!`
             });
         })
-  });
+});
 
 app.get('/logout', (req, res) => {
     req.session.destroy();
