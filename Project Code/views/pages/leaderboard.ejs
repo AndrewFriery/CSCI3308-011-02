@@ -9,15 +9,14 @@
                         <th>Username</th>
                         <th>Score</th>
                     </tr>
-                    <% users.forEach( users => { %>
-                        if (!users.highscore) {
+                    <% users.forEach( main => { %>
                             <tr>
-                                <td><%users.username%></td>
-                                <td><%users.highscore%></td>
+                                <td><%main.username%></td>
+                                <td><%main.highscore%></td>
                             </tr>
-                        } %>
-                    <% } %>
+                    <% }); %>
                 </table>
+            </div>
         </main>
 
         <%- include ('../partials/footer') %>
