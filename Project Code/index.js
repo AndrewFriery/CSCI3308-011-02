@@ -128,8 +128,8 @@ app.get('/game', (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-    const username = req.body.username;
-    res.render('pages/home', {username: req.session.user.username});
+    const username = req.session.user.username;
+    res.render('pages/home');
 });
 
 app.get('/logout', (req, res) => {
