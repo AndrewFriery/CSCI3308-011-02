@@ -1,0 +1,31 @@
+<%- include ('../partials/header') %>
+<%- include ('../partials/menu') %>
+
+<main>
+    <div class="container">
+        <%- include ('../partials/message') %>
+        <% if(data) { %>
+            <p class="fs-1 fw-bold"><%= data.username %>'s Stats</p>
+            <h1></h1>
+            <div>
+                <% if(data.highscore) { %>
+                    <p class="fs-4">High Score: <%= data.highscore %></p>
+                <% } else { %>
+                    <p class="fs-4">Play your first game!</p>
+                <% } %>
+
+                <% if(data.totalImages) { %>
+                    <p class="fs-4">Total Images Seen: <%= data.totalImages %></p>
+                <% } else { %>
+                    <p class="fs-4">Play your first game!</p>
+                <% } %>
+                
+            </div>
+        <% } else { %>
+            <div class="alert alert-danger" role="alert">
+                <h1>User data not found</h1>
+            </div>
+        <% } %>
+</main>
+
+<%- include ('../partials/footer') %>

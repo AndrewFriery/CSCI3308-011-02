@@ -1,0 +1,23 @@
+<%- include ('../partials/header') %>
+    <%- include ('../partials/menu') %>
+
+        <main>
+            <div class="container">
+                <%- include ('../partials/message') %>
+                <table style="width:100%">
+                    <tr>
+                        <th>Username</th>
+                        <th>Score</th>
+                    </tr>
+                    <% users.forEach( users => { %>
+                        if (!users.highscore) {
+                            <tr>
+                                <td><%users.username%></td>
+                                <td><%users.highscore%></td>
+                            </tr>
+                        } %>
+                    <% } %>
+                </table>
+        </main>
+
+        <%- include ('../partials/footer') %>

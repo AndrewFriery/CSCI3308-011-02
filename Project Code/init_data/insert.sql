@@ -130,3 +130,16 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 ('https://c4.wallpaperflare.com/wallpaper/924/878/435/sta%C5%84czyk-digital-art-joker-wallpaper-thumb.jpg','Real','Jan Matejko'),
 ('https://images.saatchiart.com/saatchi/696454/art/6518701/5588377-HSC00002-7.jpg','Real','Janaka Stagnaro'),
 ('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/surreal-tiger-bubble-water-dancer-daniel-eskridge.jpg','Real','Daniel Eskridge');
+
+--User dummy data
+INSERT INTO users (username, password, highscore, totalImages) VALUES
+('John', 'password', 4, 5),
+('Jill', 'password1', 10, 11),
+('Jack', 'password2', 2, 3),
+('Bob', 'password3', 24, 25),
+('Alex', 'password4', 67, 68),
+('Jaclyn', 'password5', 7, 8),
+('Maya', 'password6', 7, 8),
+('Julio', 'password7', 12, 13),
+('Juan', 'password8', 5, 6),
+('Luke', 'password9', 34, 35);
