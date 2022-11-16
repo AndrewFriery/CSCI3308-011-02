@@ -1,9 +1,15 @@
-Meeting Date:
-time:
+Meeting Date: 11/15/22
+Time: 5:43-6:00
 
 1. Decisions Made
-    -
+    - Add CSS
 2. Alternative Actions/Options Discussed
-    -
+    - Decide if stats should be a page or bar at the top
+    - Add badges to stats or other stats
+    - Picture for background for all pages
+    - Modal for leaderboard
 3. Follow-up items, including agreed-on roles and responsibilities
-    -
+    - Stats: Update CSS, decide page position/add stats (Ian S, Ian P, Andrew)
+    - Leaderboard: Leaderboard moadal, update CSS (Zach, Ian P, Andrew)
+    - Home: update CSS (Andrew)
+    - Game: Fix game page, add CSS (Nicholas, Stephen)
