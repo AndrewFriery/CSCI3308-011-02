@@ -153,6 +153,14 @@ app.get('/game', (req, res) => {
         })
 });
 
+app.get('/endGame', (req, res) => {
+    currentScore = req.session.user.score;
+    res.render('pages/lost', {
+        message: `You lost with a score of '${currentScore}'`,
+    });
+
+});
+
 app.put('/endGame', (req, res) => {
     console.log("Test");
     // Grab the user's high score from the database
@@ -162,8 +170,9 @@ app.put('/endGame', (req, res) => {
             // Check if high score is less than current score
             previousHighscore = user.highscore;
             currentScore = req.session.user.score;
-
-            if(previousHighscore < currentScore){
+            // Reset user's score to 0
+            req.session.user.score = 0;
+            if (previousHighscore < currentScore) {
                 // Update user's high score
                 let query = 'UPDATE users set highscore = $2 where username = $1;';
                 db.any(query, [req.session.user.username, currentScore])
@@ -179,14 +188,6 @@ app.put('/endGame', (req, res) => {
                         console.log(err);
                     });
             }
-
-            // Reset user's score to 0
-            req.session.user.score = 0;
-
-            // Render a lose page.
-            res.render('pages/lost', {
-                message: `You lost with a score of '${currentScore}'`,
-            });
         })
         .catch((error) => {
             // Reset user's score to 0
@@ -202,11 +203,11 @@ app.get('/updateScore/:imageType/:userGuess', (req, res) => {
     imageType = req.params.imageType;
     userGuess = req.params.userGuess;
     console.log(imageType);
-    if(imageType == userGuess){
+    if (imageType == userGuess) {
         req.session.user.score += 1;
         res.redirect('/game');
     }
-    else{
+    else {
         res.redirect('/endGame');
     }
 });
