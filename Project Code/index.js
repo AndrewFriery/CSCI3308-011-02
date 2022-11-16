@@ -164,7 +164,7 @@ app.get('/pictures', (req, res) => {
 });
 
 app.get('/users', (req, res) => {
-    let query = `SELECT * FROM users;`;
+    let query = `SELECT * FROM users WHERE username !='admin';`;
     db.any(query)
         .then((people) => {
             res.render('pages/users', {
@@ -178,17 +178,17 @@ app.get('/users', (req, res) => {
         })
 });
 
-/* app.delete('/users/delete', (req, res) => {
+app.delete('/users/delete', (req, res) => {
     let query = `DELETE FROM users WHERE users.username=$1';`;
     db.any(query)
-    .then((rows) => {
-        res.send({"message": "User deleted successfully"});
-        res.redirect('/users');
-    })
-    .catch((error) => {
-        res.send({'message' : error});
-    });
-}); */
+        .then((rows) => {
+            res.send({ "message": "User deleted successfully" });
+            res.redirect('/users');
+        })
+        .catch((error) => {
+            res.send({ 'message': error });
+        });
+});
 
 app.get('/game', (req, res) => {
     let search = `SELECT * FROM images;`;

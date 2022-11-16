@@ -142,4 +142,5 @@ INSERT INTO users (username, password, highscore, totalImages) VALUES
 ('Maya', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 7, 8),
 ('Julio', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 12, 13),
 ('Juan', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 5, 6),
-('Luke', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 34, 35);
+('Luke', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 34, 35),
+('admin','$2b$10$3xKb9LOGJeWC46.Adbkhseak1IZoBrGrWyW/QOwgQ0njb1dtYWcs.',0,0);
