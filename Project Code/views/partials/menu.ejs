@@ -14,8 +14,11 @@
                 </li>
                 <a class="nav-link" href="/leaderboard">Leaderboard</a>
                 </li>
+                <li>
+                    <a class="nav-link" href="/stats">Stats</a>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/stats">My Stats</a>
+                    <a class="nav-link" data-bs-toggle="collapse" href="#statsMenu" role="button" aria-expanded="false" aria-controls="statsMenu">Quick Stats</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
@@ -24,3 +27,8 @@
         </div>
     </div>
 </nav>
+<div class="collapse" id="statsMenu">
+    <div class="card card-body">
+        User's Stats: High Score: highscore, Total Images Seen: totalImages
+    </div>
+</div>
