@@ -68,12 +68,12 @@ app.post('/register', async (req, res) => {
         .then((rows) => {
             res.render('pages/login');
         })
-        .catch(function (err)  {
+        .catch(function (err) {
             res.render('pages/register', {
                 error: true,
                 message: "User already exists!"
             });
-        });   
+        });
 });
 
 app.get('/login', (req, res) => {
@@ -90,11 +90,13 @@ app.post('/login', async (req, res) => {
 
             if (match) {
                 req.session.user = {
-                    username: req.body.username
+                    api_key: process.env.API_KEY,
+                    score: 0,
+                    username: username
                 };
 
                 req.session.save();
-                res.redirect('/game');
+                res.redirect('/home');
             }
             else {
                 res.render('pages/register', {
@@ -112,21 +114,19 @@ app.post('/login', async (req, res) => {
 });
 
 // returns the top 10 users ordered by high scroe
-app.get('/leaderboard', async(req, res) => {
-    var query = "SELECT username, highscore FROM users ORDER BY users.highscore DESC LIMIT 10;";
+app.get('/leaderboard', (req, res) => {
+    let query = `SELECT * FROM users ORDER BY users.highscore DESC;`;
     db.any(query)
-        .then(users => {
+        .then((people) => {
             res.render('pages/leaderboard', {
-                users
+                people,
             });
         })
-        .catch(err => {
+        .catch((error) => {
             res.render('pages/leaderboard', {
-                users: [],
-                error: true,
-                message: err.message,
+                message: `Leaderboard Failed to Load`,
             });
-        });
+        })
 });
 
 // Authentication Middleware.
@@ -142,7 +142,97 @@ const auth = (req, res, next) => {
 app.use(auth);
 
 app.get('/game', (req, res) => {
-    res.render('pages/game');
+    let search = `SELECT * FROM images;`;
+    db.any(search)
+        .then((images) => {
+            const count = images.length
+            const number = Math.floor(Math.random() * count);
+            let query = `SELECT * FROM images WHERE images.imageID = '${number}';`;
+            let score = req.session.user.score;
+            db.any(query)
+                .then((art) => {
+                    res.render('pages/game', {
+                        art,
+                        score,
+                    });
+                })
+                .catch((error) => {
+                    res.render('pages/game', {
+                        message: `Game Failed to Load`,
+                    });
+                })
+        })
+        .catch((error) => {
+            res.render('pages/game', {
+                message: `Game Failed to Load`,
+            });
+        })
+});
+
+app.get('/endGame', (req, res) => {
+    currentScore = req.session.user.score;
+    res.render('pages/lost', {
+        message: `You lost with a score of '${currentScore}'`,
+    });
+
+});
+
+app.put('/endGame', (req, res) => {
+    console.log("Test");
+    // Grab the user's high score from the database
+    let search = `SELECT * FROM users WHERE username = '${req.session.user.username}';`;
+    db.any(search)
+        .then((user) => {
+            // Check if high score is less than current score
+            previousHighscore = user.highscore;
+            currentScore = req.session.user.score;
+            // Reset user's score to 0
+            req.session.user.score = 0;
+            if (previousHighscore < currentScore) {
+                // Update user's high score
+                let query = 'UPDATE users set highscore = $2 where username = $1;';
+                db.any(query, [req.session.user.username, currentScore])
+                    .then(function (data) {
+                        res.status(201).json({
+                            status: 'success',
+                            data: data,
+                            message: 'data updated successfully'
+                        });
+                    })
+                    .catch(function (err) {
+                        // return console.log(err); I dont think we want to return here but this is what I had in lab 7
+                        console.log(err);
+                    });
+            }
+        })
+        .catch((error) => {
+            // Reset user's score to 0
+            currentScore = req.session.user.score;
+            req.session.user.score = 0;
+            res.render('pages/lost', {
+                message: `You lost with a score of '${currentScore}'`,
+            });
+        })
+});
+
+app.get('/updateScore/:imageType/:userGuess', (req, res) => {
+    imageType = req.params.imageType;
+    userGuess = req.params.userGuess;
+    console.log(imageType);
+    if (imageType == userGuess) {
+        req.session.user.score += 1;
+        res.redirect('/game');
+    }
+    else {
+        res.redirect('/endGame');
+    }
+});
+
+app.get('/home', (req, res) => {
+    let username = req.session.user.username;
+    res.render('pages/home', {
+        username,
+    });
 });
 
 app.get('/leaderboard', (req, res) => {
@@ -163,7 +253,7 @@ app.get('/stats', (req, res) => {
     db.any(query)
         .then(user => {
             console.log(user);
-            const userData = {username: user[0].username, highscore: user[0].highscore, totalImages: user[0].totalimages};
+            const userData = { username: user[0].username, highscore: user[0].highscore, totalImages: user[0].totalimages };
             console.log(userData);
             res.render('pages/stats', {
                 data: userData
@@ -177,7 +267,48 @@ app.get('/stats', (req, res) => {
                 message: `Error!`
             });
         })
-  });
+});
+
+app.get('/home', (req, res) => {
+    let username = req.session.user.username;
+    res.render('pages/home', {
+        username,
+    });
+});
+
+app.get('/leaderboard', (req, res) => {
+    res.render('pages/leaderboard');
+});
+
+/*
+app.get('/stats', (req, res) => {
+    res.render('pages/stats');
+});
+*/
+
+app.get('/stats', (req, res) => {
+    const username = req.session.user.username;
+    console.log(username);
+    let query = `SELECT * FROM users WHERE users.username = '${username}';`;
+
+    db.any(query)
+        .then(user => {
+            console.log(user);
+            const userData = { username: user[0].username, highscore: user[0].highscore, totalImages: user[0].totalimages };
+            console.log(userData);
+            res.render('pages/stats', {
+                data: userData
+            });
+        })
+        .catch((error) => {
+            console.log("query not working");
+            res.render('pages/stats', {
+                data: '',
+                error: error,
+                message: `Error!`
+            });
+        })
+});
 
 app.get('/logout', (req, res) => {
     req.session.destroy();
