@@ -130,3 +130,16 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 ('https://c4.wallpaperflare.com/wallpaper/924/878/435/sta%C5%84czyk-digital-art-joker-wallpaper-thumb.jpg','Real','Jan Matejko'),
 ('https://images.saatchiart.com/saatchi/696454/art/6518701/5588377-HSC00002-7.jpg','Real','Janaka Stagnaro'),
 ('https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/surreal-tiger-bubble-water-dancer-daniel-eskridge.jpg','Real','Daniel Eskridge');
+
+--User dummy data
+INSERT INTO users (username, password, highscore, totalImages) VALUES
+('John', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 4, 5),
+('Jill', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 10, 11),
+('Jack', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 2, 3),
+('Bob', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 24, 25),
+('Alex', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 67, 68),
+('Jaclyn', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 7, 8),
+('Maya', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 7, 8),
+('Julio', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 12, 13),
+('Juan', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 5, 6),
+('Luke', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 34, 35);

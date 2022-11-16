@@ -1,0 +1,14 @@
+<%- include ('../partials/header') %>
+    <%- include ('../partials/menu') %>
+
+        <main>
+            <div class="container">
+                <%- include ('../partials/message') %>
+                    <h1>You lost :(</h1>
+                    <form action="/game" method="get">
+                        <input type="hidden" class="form-control" id="play_again" />
+                        <button type="submit" class="btn btn-success btn-lg">Play Again!</button>
+                    </form>
+        </main>
+
+        <%- include ('../partials/footer') %>
