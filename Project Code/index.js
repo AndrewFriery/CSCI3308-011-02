@@ -170,14 +170,6 @@ app.get('/game', (req, res) => {
 });
 
 app.get('/endGame', (req, res) => {
-    currentScore = req.session.user.score;
-    res.render('pages/lost', {
-        message: `You lost with a score of '${currentScore}'`,
-    });
-
-});
-
-app.get('/endGame', (req, res) => {
     // Grab the local variables
     let username = req.session.user.username;
     let currentScore = req.session.user.score;
