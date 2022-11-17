@@ -189,32 +189,54 @@ app.get('/endGame', async (req, res) => {
     });
 });
 
-function updateScore(username,currentScore){
+async function updateScore(username,currentScore){
     // Grab the user's high score from the database
-    console.log("inside update score");
+    console.log("inside update score", username);
     let search = `SELECT * FROM users WHERE username = '${username}';`;
-    db.any(search)
-        .then((user) => {
+    await db.any(search)
+        .then(async (user) => {
+            // console.log("user", user, user[0].highscore)
             // Check if high score is less than current score
-            let previousHighscore = user.highscore;
+            console.log(user[0]);
+            let previousHighscore = user[0].highscore;
+            let totalSeenImages = user[0].totalimages + currentScore + 1;
+            // console.log(user[0].totalimages,currentScore,totalSeenImages);
             if(previousHighscore < currentScore){
                 // Update user's high score
                 let query = 'UPDATE users set highscore = $2 where username = $1;';
-                db.any(query, [username, currentScore])
-                    .then(function (data) {
-                        res.status(201).json({
-                            status: 'success',
-                            data: data,
-                            message: 'data updated successfully'
-                        });
+                // let query = 'UPDATE users set highscore = $2 where username = $1, set totalImages = $3 where username = $1;';
+                console.log(query, username, currentScore)
+                await db.any(query, [username, currentScore])
+                // await db.any(query, [username, currentScore, totalSeenImages])
+                    .then(async (data) => {
+                        console.log("data: ", data);
+                        // await res.status(201).json({
+                        //     status: 'success',
+                        //     data: data,
+                        //     message: 'data updated successfully'
+                        // });
                     })
                     .catch(function (err) {
                         return console.log(err);
                     });
             }
+                // Update user's total seen images
+                let query2 = 'UPDATE users set totalImages = $2 where username = $1;';
+                await db.any(query2, [username, totalSeenImages])
+                    .then(async (data2) => {
+                        console.log("data:",data2);
+                        // await res.status(201).json({
+                        //     status: 'success',
+                        //     data: data2,
+                        //     message: 'data updated successfully'
+                        // });
+                    })
+                    .catch(function (err) {
+                        return console.log(err);
+                    });
         })
         .catch((error) => {
-            return console.log(err);
+            return console.log(error);
         });
 }
 
