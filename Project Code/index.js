@@ -169,14 +169,17 @@ app.get('/game', (req, res) => {
         })
 });
 
-app.get('/endGame', (req, res) => {
+app.get('/endGame', async (req, res) => {
     // Grab the local variables
     let username = req.session.user.username;
     let currentScore = req.session.user.score;
-    
-    // Update the database
-    updateScore(username,currentScore);
 
+    console.log("before");
+
+    // Update the database
+    await updateScore(username,currentScore);
+
+    console.log("after");
     // Reset score to zero
     req.session.user.score = 0;
 
@@ -188,6 +191,7 @@ app.get('/endGame', (req, res) => {
 
 function updateScore(username,currentScore){
     // Grab the user's high score from the database
+    console.log("inside update score");
     let search = `SELECT * FROM users WHERE username = '${username}';`;
     db.any(search)
         .then((user) => {
