@@ -177,86 +177,50 @@ app.get('/endGame', (req, res) => {
 
 });
 
-// app.get('/endGame', (req, res) => {
-//     console.log("Test");
-//     // Grab the user's high score from the database
-//     let search = `SELECT * FROM users WHERE username = '${req.session.user.username}';`;
-//     db.any(search)
-//         .then((user) => {
-//             // Check if high score is less than current score
-//             previousHighscore = user.highscore;
-//             currentScore = req.session.user.score;
-//             // Reset user's score to 0
-//             req.session.user.score = 0;
-//             if (previousHighscore < currentScore) {
-//                 // Update user's high score
-//                 let query = 'UPDATE users set highscore = $2 where username = $1;';
-//                 db.any(query, [req.session.user.username, currentScore])
-//                     .then(function (data) {
-//                         // res.status(201).json({
-//                         //     status: 'success',
-//                         //     data: data,
-//                         //     message: 'data updated successfully'
-//                         // });
-//                         res.render('pages/lost', {
-//                             message: `You lost with a score of '${currentScore}'`,
-//                         });
-//                     })
-//                     .catch(function (err) {
-//                         // return console.log(err); I dont think we want to return here but this is what I had in lab 7
-//                         console.log(err);
-//                         res.render('pages/lost', {
-//                             message: `You lost with a score of '${currentScore}'`,
-//                         });
-//                     });
-//             }
-//         })
-//         .catch((error) => {
-//             // Reset user's score to 0
-//             currentScore = req.session.user.score;
-//             req.session.user.score = 0;
-//             res.render('pages/lost', {
-//                 message: `You lost with a score of '${currentScore}'`,
-//             });
-//         })
-// });
+app.get('/endGame', (req, res) => {
+    // Grab the local variables
+    let username = req.session.user.username;
+    let currentScore = req.session.user.score;
+    
+    // Update the database
+    updateScore(username,currentScore);
 
-// function updateScore(){
-//     // Grab the user's high score from the database
-//     let search = `SELECT * FROM users WHERE username = '${req.session.user.username}';`;
-//     db.any(search)
-//         .then((user) => {
-//             // Check if high score is less than current score
-//             previousHighscore = user.highscore;
-//             currentScore = req.session.user.score;
-//             // Reset user's score to 0
-//             req.session.user.score = 0;
-//             if (previousHighscore < currentScore) {
-//                 // Update user's high score
-//                 let query = 'UPDATE users set highscore = $2 where username = $1;';
-//                 db.any(query, [req.session.user.username, currentScore])
-//                     .then(function (data) {
-//                         res.status(201).json({
-//                             status: 'success',
-//                             data: data,
-//                             message: 'data updated successfully'
-//                         });
-//                     })
-//                     .catch(function (err) {
-//                         // return console.log(err); I dont think we want to return here but this is what I had in lab 7
-//                         console.log(err);
-//                     });
-//             }
-//         })
-//         .catch((error) => {
-//             // Reset user's score to 0
-//             currentScore = req.session.user.score;
-//             req.session.user.score = 0;
-//             res.render('pages/lost', {
-//                 message: `You lost with a score of '${currentScore}'`,
-//             });
-//         });
-// }
+    // Reset score to zero
+    req.session.user.score = 0;
+
+    // Render the lost page
+    res.render('pages/lost', {
+        message: `You lost with a score of '${currentScore}'`,
+    });
+});
+
+function updateScore(username,currentScore){
+    // Grab the user's high score from the database
+    let search = `SELECT * FROM users WHERE username = '${username}';`;
+    db.any(search)
+        .then((user) => {
+            // Check if high score is less than current score
+            let previousHighscore = user.highscore;
+            if(previousHighscore < currentScore){
+                // Update user's high score
+                let query = 'UPDATE users set highscore = $2 where username = $1;';
+                db.any(query, [username, currentScore])
+                    .then(function (data) {
+                        res.status(201).json({
+                            status: 'success',
+                            data: data,
+                            message: 'data updated successfully'
+                        });
+                    })
+                    .catch(function (err) {
+                        return console.log(err);
+                    });
+            }
+        })
+        .catch((error) => {
+            return console.log(err);
+        });
+}
 
 app.get('/updateScore/:imageType/:userGuess', (req, res) => {
     imageType = req.params.imageType;
