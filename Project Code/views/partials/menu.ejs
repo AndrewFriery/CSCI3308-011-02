@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -14,9 +14,14 @@
                 </li>
                 <a class="nav-link" href="/leaderboard">Leaderboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/stats">My Stats</a>
+                <li>
+                    <a class="nav-link" href="/stats">Stats</a>
+                <!--
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="collapse" href="#statsMenu" role="button" aria-expanded="false" aria-controls="statsMenu">Quick Stats</a>
+                </li> 
+                -->
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">Logout</a>
                 </li>
@@ -24,3 +29,8 @@
         </div>
     </div>
 </nav>
+<div class="collapse" id="statsMenu">
+    <div class="card card-body">
+        User's Stats: High Score: highscore, Total Images Seen: totalImages
+    </div>
+</div>

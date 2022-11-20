@@ -1,0 +1,24 @@
+p {
+    color: white;
+}
+
+div {
+    color: white;
+}
+
+a {
+    color: white;
+}
+
+.text-bg-dark {
+    color: #fff!important;
+    background-color: RGBA(33,37,41,var(--bs-bg-opacity,0.75))!important;
+}
+
+div.collapse {
+    background-color: RGBA(33,37,41);
+}
+
+body {
+    background-image: url("https://smarthistory.org/wp-content/uploads/2021/04/StarryNightFull.jpg");
+}
