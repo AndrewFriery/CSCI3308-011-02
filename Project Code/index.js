@@ -273,20 +273,12 @@ app.get("/game", (req, res) => {
         .then((images) => {
             const count = images.length;
             const number = Math.floor(Math.random() * count);
-            let query = `SELECT * FROM images WHERE images.imageID = '${number}';`;
+            let art = [images[number]];
             let score = req.session.user.score;
-            db.any(query)
-                .then((art) => {
-                    res.render("pages/game", {
-                        art,
-                        score,
-                    });
-                })
-                .catch((error) => {
-                    res.render("pages/game", {
-                        message: `Game Failed to Load`,
-                    });
-                });
+            res.render("pages/game", {
+                art,
+                score,
+            });
         })
         .catch((error) => {
             res.render("pages/game", {
