@@ -41,7 +41,7 @@
                                     <%= image.imagedescription %>
                                 </td>
                                 <td>
-                                    <form action="" method="">
+                                    <form action="/pictures/delete" method="POST">
                                         <input type="hidden" class="form-control" id="<%=image.imageid %>"
                                             value="<%-image.imageid %>" name="image_id" />
                                         <button type="submit" class="btn btn-danger">Delete</button>
