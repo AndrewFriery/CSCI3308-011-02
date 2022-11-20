@@ -178,17 +178,34 @@ app.get('/users', (req, res) => {
         })
 });
 
-app.delete('/users/delete', (req, res) => {
-    let query = `DELETE FROM users WHERE users.username=$1';`;
+app.get('/users/delete', async (req, res) => {
+    let username = req.body.username;
+    console.log(username);
+    await deleteUser(username);
+    let query = `SELECT * FROM users WHERE username !='admin';`;
     db.any(query)
-        .then((rows) => {
-            res.send({ "message": "User deleted successfully" });
-            res.redirect('/users');
+        .then((people) => {
+            res.render('pages/users', {
+                people,
+            });
         })
         .catch((error) => {
-            res.send({ 'message': error });
-        });
+            res.render('pages/users', {
+                message: `Users Failed to Load`,
+            });
+        })
 });
+
+async function deleteUser(username) {
+    let query = `DELETE FROM users WHERE username='${username}';`;
+    await db.any(query)
+        .then(async () => {
+            return console.log("Successfully Deleted User")
+        })
+        .catch((error) => {
+            return console.log(err);
+        })
+}
 
 app.get('/game', (req, res) => {
     let search = `SELECT * FROM images;`;

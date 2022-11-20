@@ -37,7 +37,7 @@
                                     <%= user.totalimages %>
                                 </td>
                                 <td>
-                                    <form action="/users/delete" method="delete">
+                                    <form action="/users/delete" method="GET">
                                         <input type="hidden" class="form-control" id="<%=user.username %>"
                                             value="<%-user.username %>" name="user_username" />
                                         <button type="submit" class="btn btn-danger">Delete</button>
