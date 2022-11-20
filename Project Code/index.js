@@ -211,7 +211,7 @@ app.post("/users/delete", async (req, res) => {
         people,
       });
     })
-    .catch((error) => {
+    .catch((err) => {
       res.render("pages/users", {
         message: `Users Failed to Load`,
       });
@@ -225,7 +225,7 @@ async function deleteUser(username) {
     .then(async () => {
       return console.log("Successfully Deleted User");
     })
-    .catch((error) => {
+    .catch((err) => {
       return console.log(err);
     });
 }
