@@ -178,7 +178,7 @@ app.get("/pictures/delete", async (req, res) => {
 });
 
 app.post("/pictures/delete", async (req, res) => {
-    let ID = req.body.image_imageID;
+    let ID = req.body.image_id;
     console.log(ID);
     await deletePicture(ID);
     let query = `SELECT * FROM images;`;
