@@ -4,13 +4,18 @@
         <main>
             <div class="container">
                 <%- include ('../partials/message') %>
-                    <table style="width:100%">
+                    <table class="leaderboard" style="width:100%">
+                        <% let ranking = 1 %>
                         <tr>
+                            <th>Ranking</th>
                             <th>Username</th>
                             <th>Score</th>
                         </tr>
                         <% people.forEach(function(user) { %>
                             <tr>
+                                <td>
+                                    <%= ranking %>
+                                </td>
                                 <td>
                                     <%= user.username %>
                                 </td>
@@ -18,7 +23,8 @@
                                     <%= user.highscore %>
                                 </td>
                             </tr>
-                            <% }); %>
+                            <% ranking++ %>
+                        <% }); %>
                     </table>
             </div>
         </main>
