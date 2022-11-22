@@ -1,0 +1,55 @@
+<%- include ('../partials/header') %>
+    <%- include ('../partials/menu') %>
+
+        <main>
+            <div class="container">
+                <%- include ('../partials/message') %>
+                    <h1>Welcome Admin!</h1>
+                    <h2>
+                        <table>
+                            <th>
+                                This is the Pictures Database
+                            </th>
+                            <th>
+                                <form action="/admin" method="GET">
+                                    <input type="hidden" class="form-control" id="back_to_admin" value=""
+                                        name="user_username" />
+                                    <button type="submit" class="btn btn-secondary">Back</button>
+                                </form>
+                            </th>
+                        </table>
+                    </h2>
+                    <table style="width: 100%;" id="pictures_table">
+                        <tr>
+                            <th>Image ID</th>
+                            <th>Image</th>
+                            <th>Image Type</th>
+                            <th>Image Description</th>
+                        </tr>
+                        <% art.forEach(function(image) { %>
+                            <tr>
+                                <td>
+                                    <%= image.imageid %>
+                                </td>
+                                <td>
+                                    <img src="<%- image.imageurl %>" style="width: 20%;">
+                                </td>
+                                <td>
+                                    <%= image.imagetype %>
+                                </td>
+                                <td>
+                                    <%= image.imagedescription %>
+                                </td>
+                                <td>
+                                    <form action="/pictures/delete" method="POST">
+                                        <input type="hidden" class="form-control" id="<%=image.imageid %>"
+                                            value="<%-image.imageid %>" name="image_id" />
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </table>
+        </main>
+
+        <%- include ('../partials/footer') %>
