@@ -101,7 +101,7 @@ app.post("/login", async (req, res) => {
                 if (username == "admin") {
                     res.redirect("/admin");
                 }
-                res.redirect("/game");
+                res.redirect("/home");
             } else {
                 res.render("pages/register", {
                     error: true,

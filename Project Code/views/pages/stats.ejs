@@ -8,12 +8,16 @@
             <p class="fs-1 fw-bold"><%= data.username %>'s Stats</p>
             <h1></h1>
             <div class="row">
-                <% if(data.totalImages) { %>
-                    <p class="fs-4">Total Images Seen: <%= data.totalImages %></p>
+                <% if(data.highscore) { %>
+                    <p class="fs-4">Highscore: <%= data.highscore %></p>
                 <% } else { %>
                     <p class="fs-4">Play your first game!</p>
+                <% } %> 
+            </div>
+            <div class="row">
+                <% if(data.totalImages) { %>
+                    <p class="fs-4">Total Images Seen: <%= data.totalImages %></p>
                 <% } %>
-                
             </div>
         <% } else { %>
             <div class="alert alert-danger" role="alert">
