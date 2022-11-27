@@ -5,9 +5,9 @@
             <div class="container">
                 <%- include ('../partials/message') %>
                     <center><h1>You lost :(</h1></center>
-                    <center><img src="<%- url %>" style="width: 40%;"></center>
-                    <center><h1><%= type %></h1></center>
-                    <center><h1><%= description %></h1></center>
+                    <center><img src="<%- url %>" style="width: 400px; height: 400px;"></center>
+                    <center><h3><%= type %></h3></center>
+                    <center><h3><%= description %></h3></center>
                     <center>
                         <form action="/game" method="get">
                             <input type="hidden" class="form-control" id="play_again" />
