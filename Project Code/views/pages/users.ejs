@@ -1,0 +1,51 @@
+<%- include ('../partials/header') %>
+    <%- include ('../partials/menu') %>
+
+        <main>
+            <div class="container">
+                <%- include ('../partials/message') %>
+                    <h1>Welcome Admin!</h1>
+                    <h2>
+                        <table>
+                            <th>
+                                This is the Users Database
+                            </th>
+                            <th>
+                                <form action="/admin" method="GET">
+                                    <input type="hidden" class="form-control" id="back_to_admin" value=""
+                                        name="user_username" />
+                                    <button type="submit" class="btn btn-secondary">Back</button>
+                                </form>
+                            </th>
+                        </table>
+                    </h2>
+                    <table style="width: 100%;" id="pictures_table">
+                        <tr>
+                            <th>Username</th>
+                            <th>High Score</th>
+                            <th>Total Images</th>
+                        </tr>
+                        <% people.forEach(function(user) { %>
+                            <tr>
+                                <td>
+                                    <%= user.username %>
+                                </td>
+                                <td>
+                                    <%= user.highscore %>
+                                </td>
+                                <td>
+                                    <%= user.totalimages %>
+                                </td>
+                                <td>
+                                    <form action="/users/delete" method="POST">
+                                        <input type="hidden" class="form-control" id="<%=user.username %>"
+                                            value="<%-user.username %>" name="user_username" />
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }); %>
+                    </table>
+        </main>
+
+        <%- include ('../partials/footer') %>

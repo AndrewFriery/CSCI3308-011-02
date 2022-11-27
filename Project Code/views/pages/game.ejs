@@ -8,18 +8,19 @@
                 <%- include ('../partials/message') %>
                     <% art.forEach(function(image) { %>
                         <% url=image.imageurl; type=image.imagetype; description=image.imageDescription; %>
-                            <div class="card text-bg-dark p-3" style="width: 18rem; font-size: x-large;">
-                                <div class="card-body">
-                                    <h5 class="card-title">Current Score</h5>
-                                    <center>
-                                        <p class="card-text">
-                                            <%= score %>
-                                        </p>
-                                    </center>
-
-                                </div>
+                        <center>     
+                            <div class="card text-bg-dark p-6" style="width: 18rem; font-size: x-large;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Current Score</h5>
+                                        <center>
+                                            <p class="card-text">
+                                                <%= score %>
+                                            </p>
+                                        </center>
+                                    </div>    
                             </div>
-                            <center><img src="<%- url %>" style="width: 40%;"></center>
+                        </center>
+                            <center><img src="<%- url %>" style="width: 500px; height: 500px;"></center>
                             <table style="margin: auto;">
                                 <th>
                                     <form action="/updateScore/<%- type %>/AI" method="get">
