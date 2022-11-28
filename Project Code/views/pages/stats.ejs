@@ -3,27 +3,113 @@
 
 <main>
     <div class="container">
-        <%- include ('../partials/message') %>
-        <% if(data) { %>
-            <p class="fs-1 fw-bold"><%= data.username %>'s Stats</p>
-            <h1></h1>
-            <div class="row">
-                <% if(data.highscore) { %>
-                    <p class="fs-4">Highscore: <%= data.highscore %></p>
-                <% } else { %>
-                    <p class="fs-4">Play your first game!</p>
-                <% } %> 
+        <div class="row align-items-start">
+            <div class="col">
+                <div class="card text-bg-dark p-3" style="width: 25rem;">
+                    <%- include ('../partials/message') %>
+                    <% if(data) { %>
+                        <p class="fs-1 fw-bold"><%= data.username %>'s Stats</p>
+                        <h1></h1>
+                        <div class="row">
+                            <% if(data.highscore) { %>
+                                <p class="fs-4">Highscore: <%= data.highscore %></p>
+                            <% } else { %>
+                                <p class="fs-4">Play your first game!</p>
+                            <% } %> 
+                        </div>
+                        <div class="row">
+                            <% if(data.totalImages) { %>
+                                <p class="fs-4">Total Images Seen: <%= data.totalImages %></p>
+                            <% } %>
+                        </div>
+                    <% } else { %>
+                        <div class="alert alert-danger" role="alert">
+                            <h1>User data not found</h1>
+                        </div>
+                    <% } %>
+                </div>
             </div>
-            <div class="row">
-                <% if(data.totalImages) { %>
-                    <p class="fs-4">Total Images Seen: <%= data.totalImages %></p>
-                <% } %>
+            <div class="col">
+                <div class="card text-bg-dark p-3" style="width:30rem">
+                    <% if(data) { %>
+                        <p class="fs-1 fw-bold"><%= data.username %>'s Badges</p>
+                        <h1></h1>
+                        <% if(data.totalImages) { %>
+                            <div class="row">
+                                <div class="card text-bg-success" style="width:auto;">
+                                    <p class="fs-4"><img src="https://mothershipstrategies.com/wp-content/uploads/2019/01/trophie.png" style="width:auto;height:30px;margin-right:10px;">Played your first game!</p>
+                                </div>
+                            </div>
+                            <% if(data.highscore > 10) { %>
+                                <div class="row">
+                                    <div class="card text-bg-info" style="width:auto;">
+                                        <p class="fs-4"><img src="https://mothershipstrategies.com/wp-content/uploads/2019/01/trophie.png" style="width:auto;height:30px;margin-right:10px;">
+                                            Highscore of 10</p>
+                                    </div>
+                                </div>
+                            <% } %>
+                            <% if(data.highscore > 50) { %>
+                                <div class="row">
+                                    <div class="card text-bg-secondary" style="width:auto;">
+                                        <p class="fs-4"><img src="https://mothershipstrategies.com/wp-content/uploads/2019/01/trophie.png" style="width:auto;height:30px;margin-right:10px;">
+                                            Highscore of 10</p>
+                                    </div>
+                                </div>
+                            <% } %>
+                            <% if(data.highscore > 75) { %>
+                                <div class="row">
+                                    <div class="card text-bg-primary" style="width:auto;">
+                                        <p class="fs-4"><img src="https://mothershipstrategies.com/wp-content/uploads/2019/01/trophie.png" style="width:auto;height:30px;margin-right:10px;">
+                                            Highscore of 10</p>
+                                    </div>
+                                </div>
+                            <% } %>
+                            <% if(data.highscore > 100) { %>
+                                <div class="row">
+                                    <div class="card text-bg-danger" style="width:auto;">
+                                        <p class="fs-4"><img src="https://mothershipstrategies.com/wp-content/uploads/2019/01/trophie.png" style="width:auto;height:30px;margin-right:10px;">
+                                            Highscore of 10</p>
+                                    </div>
+                                </div>
+                            <% } %>
+                            <% if(data.totalImages > 10) { %>
+                                <div class="row">
+                                    <div class="card text-bg-primary" style="width:auto;">
+                                        <p class="fs-4"><img src="https://mothershipstrategies.com/wp-content/uploads/2019/01/trophie.png" style="width:auto;height:30px;margin-right:10px;">
+                                            Seen 10 Images</p>
+                                    </div>
+                                </div>
+                            <% } %>
+                            <% if(data.totalImages > 50) { %>
+                                <div class="row">
+                                    <div class="card text-bg-secondary" style="width:auto;">
+                                        <p class="fs-4"><img src="https://mothershipstrategies.com/wp-content/uploads/2019/01/trophie.png" style="width:auto;height:30px;margin-right:10px;">
+                                            Seen 50 Images</p>
+                                    </div>
+                                </div>
+                            <% } %>
+                            <% if(data.totalImages > 100) { %>
+                                <div class="row">
+                                    <div class="card text-bg-info" style="width:auto;">
+                                        <p class="fs-4"><img src="https://mothershipstrategies.com/wp-content/uploads/2019/01/trophie.png" style="width:auto;height:30px;margin-right:10px;">
+                                            Seen 100 Images</p>
+                                    </div>
+                                </div>
+                            <% } %>
+                        <% } else { %>
+                            <div class="row">
+                                <p class="fs-4">Play your first game!</p>
+                            </div>
+                        <% } %>
+                    <% } else { %>
+                        <div class="alert alert-danger" role="alert">
+                            <h1>User data not found</h1>
+                        </div>
+                    <% } %>
+                </div>
             </div>
-        <% } else { %>
-            <div class="alert alert-danger" role="alert">
-                <h1>User data not found</h1>
-            </div>
-        <% } %>
+        </div>
+    </div>
 </main>
 
 <%- include ('../partials/footer') %>
