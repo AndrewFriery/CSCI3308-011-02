@@ -103,14 +103,14 @@ app.post("/login", async (req, res) => {
                 }
                 res.redirect("/home");
             } else {
-                res.render("pages/register", {
+                res.render("pages/login", {
                     error: true,
                     message: `Incorrect Password`,
                 });
             }
         })
         .catch((error) => {
-            res.render("pages/login", {
+            res.render("pages/register", {
                 error: true,
                 message: `Username Wasn't Recognized!`,
             });
