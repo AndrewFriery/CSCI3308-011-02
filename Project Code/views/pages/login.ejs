@@ -4,6 +4,8 @@
         <main>
             <div class="container">
                 <%- include ('../partials/message') %>
+                <p></p>
+                <div style="background-color: RGBA(33,37,41,var(--bs-bg-opacity,0.75))!important; padding: 15px; border-radius: 10px;">
                     <h1>Login</h1>
                     <form action="/login" method="POST">
                         <div class="mb-3">
@@ -18,6 +20,7 @@
                         <p>Don't have an account? <a href='/register' style="color: rgb(255, 255, 255);"><u>Register</u></a></p>
                         <button type="submit" class="btn btn-primary">Login</button>
                     </form>
+                    </div>
         </main>
 
         <%- include ('../partials/footer') %>

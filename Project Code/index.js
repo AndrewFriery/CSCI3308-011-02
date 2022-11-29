@@ -319,18 +319,20 @@ app.get('/endGame', async (req, res) => {
             // console.log(currentDescription);
 
             res.render("pages/lost", {
-                message: `You lost with a score of '${currentScore}'`,
+                // message: `You lost with a score of '${currentScore}'`,
                 url: currentUrl,
                 type: currentType,
                 description: currentDescription,
+                score: currentScore,
             });
         })
         .catch((error) => {
             res.render("pages/lost", {
-                message: `You lost with a score of '${currentScore}'`,
+                // message: `You lost with a score of '${currentScore}'`,
                 url: "URL Not Found",
                 type: "Type Not Found",
                 description: "Description Not Found",
+                score: 0,
             });
         });
 });

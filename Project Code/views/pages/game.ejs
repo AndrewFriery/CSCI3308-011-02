@@ -6,37 +6,34 @@
         <main>
             <div class="container">
                 <%- include ('../partials/message') %>
-                    <% art.forEach(function(image) { %>
-                        <% url=image.imageurl; type=image.imagetype; description=image.imageDescription; %>
-                        <center>     
-                            <div class="card text-bg-dark p-6" style="width: 18rem; font-size: x-large;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Current Score</h5>
-                                        <center>
-                                            <p class="card-text">
-                                                <%= score %>
-                                            </p>
-                                        </center>
-                                    </div>    
-                            </div>
-                        </center>
-                            <center><img src="<%- url %>" style="width: 500px; height: 500px;"></center>
-                            <table style="margin: auto;">
-                                <th>
-                                    <form action="/updateScore/<%- type %>/AI" method="get">
-                                        <input type="hidden" class="form-control" id="guess_AI" value="AI" />
-                                        <button type="submit" class="btn btn-primary btn-lg">AI</button>
-                                    </form>
-                                </th>
-                                <th>
-                                    <form action="/updateScore/<%- type %>/Real" method="get">
-                                        <input type="hidden" class="form-control" id="guess_Real" value="Real" />
-                                        <button type="submit" class="btn btn-success btn-lg">Real</button>
-                                    </form>
-                                </th>
-                            </table>
-                            <% }); %>
-
+                <p></p>
+                <center>
+                    <div style="background-color: RGBA(33,37,41,var(--bs-bg-opacity,0.75))!important; display: inline-block; padding: 15px; padding-top: 5px; border-radius: 10px; height: 40.1rem;">
+                        <% art.forEach(function(image) { %>
+                            <% url=image.imageurl; type=image.imagetype; description=image.imageDescription; %> 
+                                <p></p>
+                                        <center><h3>Current Score</h3></center>
+                                        <center><h3><%= score %></h3></center>
+                                <p></p>
+                                <img src="<%- url %>" style="width: 450px; height: 450px;">
+                                <table style="margin: auto;">
+                                    <p></p>
+                                    <th>
+                                        <form action="/updateScore/<%- type %>/AI" method="get">
+                                            <input type="hidden" class="form-control" id="guess_AI" value="AI" />
+                                            <button type="submit" class="btn btn-primary btn-lg">AI</button>
+                                        </form>
+                                    </th>
+                                    <th>
+                                        <form action="/updateScore/<%- type %>/Real" method="get">
+                                            <input type="hidden" class="form-control" id="guess_Real" value="Real" />
+                                            <button type="submit" class="btn btn-success btn-lg">Real</button>
+                                        </form>
+                                    </th>
+                                </table>
+                                <% }); %>
+                    </div>
+                </center>
         </main>
 
         <%- include ('../partials/footer') %>
