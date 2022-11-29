@@ -1,0 +1,8 @@
+11/29/22
+Stats page now has badges
+The CSS has been updated to include:
+  Starry Night is the background of every page
+  All text is white in a card with a faded black background
+  Re-aligned items on the game page
+  Leaderboard now has multiple colors to differentiate rows
+  Footer has been deleted
