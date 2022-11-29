@@ -10,10 +10,6 @@ a {
     color: white;
 }
 
-.text-bg-dark {
-    color: #fff!important;
-    background-color: RGBA(33,37,41,var(--bs-bg-opacity,0.75))!important;
-}
 
 div.collapse {
     background-color: RGBA(33,37,41);
