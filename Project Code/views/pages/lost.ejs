@@ -4,11 +4,23 @@
         <main>
             <div class="container">
                 <%- include ('../partials/message') %>
-                    <h1>You lost :(</h1>
-                    <form action="/game" method="get">
-                        <input type="hidden" class="form-control" id="play_again" />
-                        <button type="submit" class="btn btn-success btn-lg">Play Again!</button>
-                    </form>
+                <p></p>
+                <center>
+                    <div style="background-color: RGBA(33,37,41,var(--bs-bg-opacity,0.75))!important; display: inline-block; padding: 15px; border-radius: 10px;">
+                        <center><h2>You lost with a score of <%= score %></h1></center>
+                        <center><img src="<%- url %>" style="width: 420px; height: 420px;"></center>
+                        <p></p>
+                        <center><h3><%= type %></h3></center>
+                        <center><h3><%= description %></h3></center>
+                        <center>
+                            <form action="/game" method="get">
+                                <input type="hidden" class="form-control" id="play_again" />
+                                <button type="submit" class="btn btn-success btn-lg">Play Again!</button>
+                            </form>
+                        </center>
+                    </div>
+                </center>
+
         </main>
 
         <%- include ('../partials/footer') %>

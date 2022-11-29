@@ -5,6 +5,8 @@ const bodyParser = require("body-parser");
 const session = require("express-session");
 const bcrypt = require("bcrypt");
 
+var number;
+
 // database configuration, config in env
 const dbConfig = {
     host: "db",
@@ -99,16 +101,16 @@ app.post("/login", async (req, res) => {
                 if (username == "admin") {
                     res.redirect("/admin");
                 }
-                res.redirect("/game");
+                res.redirect("/home");
             } else {
-                res.render("pages/register", {
+                res.render("pages/login", {
                     error: true,
                     message: `Incorrect Password`,
                 });
             }
         })
         .catch((error) => {
-            res.render("pages/login", {
+            res.render("pages/register", {
                 error: true,
                 message: `Username Wasn't Recognized!`,
             });
@@ -272,7 +274,7 @@ app.get("/game", (req, res) => {
     db.any(search)
         .then((images) => {
             const count = images.length;
-            const number = Math.floor(Math.random() * count);
+            number = Math.floor(Math.random() * count);
             let art = [images[number]];
             let score = req.session.user.score;
             res.render("pages/game", {
@@ -301,10 +303,38 @@ app.get('/endGame', async (req, res) => {
     // Reset score to zero
     req.session.user.score = 0;
 
-    // Render the lost page
-    res.render('pages/lost', {
-        message: `You lost with a score of '${currentScore}'`,
-    });
+    // Render the lost page with the correct information
+    let search = `SELECT * FROM images WHERE imageID = ${number+1};`;
+    db.any(search)
+        .then((currentImage) => {
+            // console.log(number);
+            // console.log(currentImage);
+        
+            let currentUrl = currentImage[0].imageurl;
+            let currentType = currentImage[0].imagetype;
+            let currentDescription = currentImage[0].imagedescription;
+
+            // console.log(currentUrl);
+            // console.log(currentType);
+            // console.log(currentDescription);
+
+            res.render("pages/lost", {
+                // message: `You lost with a score of '${currentScore}'`,
+                url: currentUrl,
+                type: currentType,
+                description: currentDescription,
+                score: currentScore,
+            });
+        })
+        .catch((error) => {
+            res.render("pages/lost", {
+                // message: `You lost with a score of '${currentScore}'`,
+                url: "URL Not Found",
+                type: "Type Not Found",
+                description: "Description Not Found",
+                score: 0,
+            });
+        });
 });
 
 async function updateScore(username, currentScore) {
