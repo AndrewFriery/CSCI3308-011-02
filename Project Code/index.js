@@ -304,11 +304,15 @@ app.get('/endGame', async (req, res) => {
     req.session.user.score = 0;
 
     // Render the lost page with the correct information
-    let search = `SELECT * FROM images WHERE imageID = ${number+1};`;
+    // let search = `SELECT * FROM images WHERE imageID = ${number+1};`;
+    let search = `SELECT * FROM images;`;
     db.any(search)
-        .then((currentImage) => {
+        .then((images) => {
             // console.log(number);
             // console.log(currentImage);
+            let currentImage = [images[number]];
+
+            console.log(currentImage);
         
             let currentUrl = currentImage[0].imageurl;
             let currentType = currentImage[0].imagetype;
