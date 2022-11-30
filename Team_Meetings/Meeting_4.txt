@@ -1,9 +1,13 @@
-Meeting Date:
-time:
+Meeting Date: 11/29/2022
+time: 5:30
 
 1. Decisions Made
-    -
+    - Architecture Diagram such as tools actually used
+    - Future enhancements
 2. Alternative Actions/Options Discussed
-    -
+    - When going through the walk through make sure to show all test cases,
+    - Take time on each page so we explain each and every functionality
+    - Divide the presentation up and explain each part in depth
 3. Follow-up items, including agreed-on roles and responsibilities
-    -
+    - Explain how images are created and the api
+    - Everyone must talk in the presentation
