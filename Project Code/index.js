@@ -62,20 +62,27 @@ app.post("/register", async (req, res) => {
     const username = req.body.username;
     const hash = await bcrypt.hash(req.body.password, 10);
 
-    let query = `INSERT INTO users (username, password) VALUES ('${username}', '${hash}');`;
-
-    console.log(username, hash);
-
-    db.any(query)
-        .then((rows) => {
-            res.render("pages/login");
-        })
-        .catch(function (err) {
-            res.render("pages/register", {
-                error: true,
-                message: "User already exists!",
-            });
+    if(username == "") {
+        res.render("pages/register", {
+            error: true,
+            message: "Enter a username",
         });
+    } else {
+        let query = `INSERT INTO users (username, password) VALUES ('${username}', '${hash}');`;
+
+        console.log(username, hash);
+
+        db.any(query)
+            .then((rows) => {
+                res.render("pages/login");
+            })
+            .catch(function (err) {
+                res.render("pages/register", {
+                    error: true,
+                    message: "User already exists!",
+                });
+            });
+    }
 });
 
 app.get("/login", (req, res) => {
