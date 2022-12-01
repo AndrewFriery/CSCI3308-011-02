@@ -133,7 +133,7 @@ INSERT INTO images (imageURL, imageType, imageDescription) VALUES
 
 --User dummy data
 INSERT INTO users (username, password, highscore, totalImages) VALUES
-('John', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 4, 5),
+('John', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 100, 500),
 ('Jill', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 10, 11),
 ('Jack', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 2, 3),
 ('Bob', '$2b$10$uQcdAj60G6QCtLO3nha1Ae9C05p5tW0sT3lYv0gufgc9UIS96lp/G', 24, 25),
