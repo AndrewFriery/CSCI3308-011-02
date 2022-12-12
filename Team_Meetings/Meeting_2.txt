@@ -1,16 +1,9 @@
-Meeting Date: 11/8/22
-Time: 5:30pm - 5:45pm
+Meeting Date:
+time:
 
 1. Decisions Made
-    - We should prioritize working on the game to get it functional
-    - Merge our database and main
+    -
 2. Alternative Actions/Options Discussed
-    - Admin page in the future if we finish
+    -
 3. Follow-up items, including agreed-on roles and responsibilities
-    - Work on the home page (Andrew and Ian S.)
-    - Work on the stats/user page (Ian V. and Zach)
-    - Work on the leaderboard (Ian V. and Zach)
-    - Game page structure (Andrew and Ian S.)
-    - Game page buttons (Nick and Stephen)
-    - Game page image display (Nick and Stepen)
-    
+    -
