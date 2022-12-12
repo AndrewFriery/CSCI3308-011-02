@@ -1,10 +1,52 @@
 <%- include ('../partials/header') %>
-<%- include ('../partials/menu') %>
+    <%- include ('../partials/menu') %>
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+                background-color: grey;
+            }
+        </style>
 
-<main>
-    <div class="container">
-        <%- include ('../partials/message') %>
-            <h1>This is the leaderboard page</h1>
-</main>
+        <main>
+            <div class="container">
+                <%- include ('../partials/message') %>
+                    <p></p>
+                    <div style="background-color: RGBA(33,37,41,var(--bs-bg-opacity,0.75))!important; padding: 15px; border-radius: 10px;">
+                        <table class="leaderboard" style="width:100%">
+                            <% let ranking = 1 %>
+                            <tr>
+                                <th>Ranking</th>
+                                <th>Username</th>
+                                <th>Score</th>
+                            </tr>
+                            <% people.forEach(function(user) { %>
+                                <tr>
+                                    <td>
+                                        #<%= ranking %>
+                                    </td>
+                                    <td>
+                                        <%= user.username %>
+                                    </td>
+                                    <td>
+                                        <%= user.highscore %>
+                                    </td>
+                                </tr>
+                                <% ranking++ %>
+                            <% }); %>
+                        </table>
+                    </div>
+            </div>
+        </main>
 
-<%- include ('../partials/footer') %>
+        <%- include ('../partials/footer') %>
