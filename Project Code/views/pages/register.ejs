@@ -4,23 +4,23 @@
         <main>
             <div class="container">
                 <%- include ('../partials/message') %>
+                <p></p>
+                <div style="background-color: RGBA(33,37,41,var(--bs-bg-opacity,0.75))!important; padding: 15px; border-radius: 10px;">
                     <h1>Register</h1>
                     <form action="/register" method="POST">
                         <div class="mb-3">
                             <label for="InputUsername" class="form-label">Username</label>
-                            <input type="Username" class="form-control" name="username" id="username"
-                                aria-describedby="usernameHelp" />
+                            <input type="Username" class="form-control" name="username" id="username" aria-describedby="usernameHelp" minlength="1" maxlength="32" required/>
                         </div>
                         <div class="mb-3">
                             <label for="InputPassword" class="form-label">Password</label>
-                            <input type="password" class="form-control" name="password" id="password"
-                                aria-describedby="passwordHelp" />
+                            <input type="password" class="form-control" name="password" id="password" aria-describedby="passwordHelp" minlength="8" maxlength="32" required/>
                         </div>
-                        <p>Already have an account? <a href='/login' style="color: blue;"><u>Login</u></a></p>
+                        <p>Already have an account? <a href='/login' style="color: rgb(255, 255, 255);"><u>Login</u></a></p>
                         <button type="submit" class="btn btn-primary">Register</button>
                     </form>
             </div>
-
+        </div>
         </main>
 
         <%- include ('../partials/footer') %>
